@@ -14,12 +14,13 @@ body {
 section {
     align-items: center;
     border: 1px solid #DEE2E6;
-    border-radius: 12px;
+    border-radius: 12px 12px 0 0;
     display: flex;
     height: 481px;
     flex-direction: column;
     width: 366px;
 }
+
 
 h1 {
     color: #212529;
@@ -31,9 +32,10 @@ h1 {
 }
 
 img {
-    border-radius: 12px, 12px, 0px, 0px;
+    border-radius: 12px 12px 0 0;
     height: 220px;
-    width: 366px;
+    width: 100%;
+    /* width: 366px; */
 }
 
 #caixa-descricao {
@@ -41,6 +43,7 @@ img {
     height: 160px;
     padding: 24px;
     width: 366px;
+    border: 1px solid #DEE2E6;
 
 }
 
@@ -68,7 +71,7 @@ li {
 }
 
 button {
-    background-color: #007BFF;
+    background-color: #1D4F91;
     border: none;
     border-radius: 12px;
     color: #FFFFFF;
@@ -77,3 +80,13 @@ button {
     width: 364px;
     margin-top: 24px;
 }
+
+/* button {
+    color: #1D4F91;
+    width: 165px;
+    height: 38px;
+    border-radius: 6px;
+    border: 1px solid #1D4F91;
+    padding: 10px, 16px, 10px, 16px;
+    margin: 8px;
+} */

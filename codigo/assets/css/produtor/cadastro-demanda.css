@@ -3,6 +3,7 @@
     padding: 0;
     border: 0;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 header{
@@ -21,21 +22,53 @@ main{
     margin: 0 36px;
 }
 
-form{
+
+form .campos{
     display: flex;
     flex-direction: column;
+    margin-bottom: 16px;
+}
+
+input{
+    padding: 0 4px;
 }
 
 input , select{
-    border: 1px solid black;
+    border: 1px solid #EFEFEF;
     height: 39px;
     border-radius: 6px;
 }
 
 h1{
     font-size: 28px;
+    margin: 32px 0 12px 0;
 }
 
 label{
     font-size: 16px;
+}
+
+.botoes{
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.botoes button {
+    height: 38px;
+    width: 120px;
+    border-radius: 8px;
+    
+}
+
+#adicionar{
+    background-color: #1D4F91;
+    color: white;
+}
+
+#cancelar{
+    background-color: white;
+    color: #1D4F91;
+    border: 1px solid #1D4F91;
 }

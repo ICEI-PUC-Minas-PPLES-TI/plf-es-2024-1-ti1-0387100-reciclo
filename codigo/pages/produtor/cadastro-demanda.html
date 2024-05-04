@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar demanda</title>
+    <link rel="stylesheet" href="../../assets/css/produtor/cadastro-demanda.css">
+</head>
+<body>
+    <header>
+        <img id="logo" src="../../assets/img/reciclo-logo.jpg" alt="Logo ReCiclo">
+    </header>
+    <main>
+        <h1>Novo Resíduo</h1>
+        <section>
+            <form action="">
+
+                <label for="peso">Peso</label>
+                <input type="text" id="peso">
+
+                <label for="localColeta">Local de Coleta</label>
+                <input type="text" id="localColeta">
+
+                <label for="descricaoResiduo">Descrição do resíduo</label>
+                <input type="text" id="descricaoResiduo">
+
+                <label for="dataColeta">Data da Coleta</label>
+                <input type="text" id="dataColeta">
+
+                <label for="horarioColeta">Horário da Coleta</label>
+                <input type="text" id="horarioColeta">
+
+                <label for="tipoResiduo">Tipo de resíduo</label>
+                <select name="tipoResiduo" id="tipoResiduo">
+                    <option value="" disabled selected>Selecione um tipo de resíduo</option>
+                    <option value="plasticio">Plastico</option>
+                    <option value="papel">Papel</option>
+                    <option value="metal">Metal</option>
+                    <option value="vidro">Vidro</option>
+                </select>
+                <div id="botoes">
+                    <input type="button" value="Cancelar">
+                    <input type="button" value="+ Adicionar">
+                </div>
+
+            </form>
+        </section>
+    </main>
+</body>
+</html>

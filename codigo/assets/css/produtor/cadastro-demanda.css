@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+header{
+    height: 56px;
+    padding: 8px 16px;
+    background-color: #EFEFEF;
+}
+
+#logo{
+    width: 91px; 
+    height: 31px;
+    margin-top: 5px;
+}
+
+main{
+    margin: 0 36px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+input , select{
+    border: 1px solid black;
+    height: 39px;
+    border-radius: 6px;
+}
+
+h1{
+    font-size: 28px;
+}
+
+label{
+    font-size: 16px;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar demanda</title>
+    <link rel="stylesheet" href="../../assets/css/produtor/cadastro-demanda.css">
+</head>
+
+<body>
+    <header>
+        <img id="logo" src="../../assets/img/reciclo-logo.jpg" alt="Logo ReCiclo">
+    </header>
+    <main>
+        <h1>Novo Resíduo</h1>
+        <section>
+            <form action="">
+                <div class="campos">
+                    <label for="peso">Peso</label>
+                    <input type="text" id="peso" placeholder="16kg">
+                </div>
+                <div class="campos">
+                    <label for="localColeta">Local de Coleta</label>
+                    <input type="text" id="localColeta" placeholder="Rua Alagoas, 1024, Savassi">
+                </div>
+                <div class="campos">
+                    <label for="descricaoResiduo">Descrição do resíduo</label>
+                    <input type="text" id="descricaoResiduo" placeholder="Descrição">
+                </div>
+                <div class="campos">
+                    <label for="dataColeta">Data da Coleta</label>
+                    <input type="date" id="dataColeta">
+                </div>
+                <div class="campos">
+                    <label for="horarioColeta">Horário da Coleta</label>
+                    <input type="text" id="horarioColeta" placeholder="14hrs às 17hrs">
+                </div>
+                <div class="campos">
+                    <label for="tipoResiduo">Tipo de resíduo</label>
+                    <select name="tipoResiduo" id="tipoResiduo">
+                        <option value="" disabled selected>Selecione um tipo de resíduo</option>
+                        <option value="plasticio">Plastico</option>
+                        <option value="papel">Papel</option>
+                        <option value="metal">Metal</option>
+                        <option value="vidro">Vidro</option>
+                    </select>
+                    <div class="botoes">
+                        <button id="cancelar">Cancelar</button>
+                        <button id="adicionar">+ Adicionar</button>
+                    </div>
+
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>

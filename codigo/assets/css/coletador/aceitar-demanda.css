@@ -5,6 +5,13 @@
     background-color: #FFFFFF;
 }
 
+p {
+    font-size: 16px;
+    line-height: 19.36px;
+    color: #6C757D;
+    font-weight: 400;
+}
+
 body {
     align-items: center;
     display: flex;
@@ -12,7 +19,6 @@ body {
 }
 
 section {
-    align-items: center;
     border: 1px solid #DEE2E6;
     border-radius: 12px 12px 0 0;
     display: flex;
@@ -29,6 +35,14 @@ h1 {
     line-height: 33.89px;
     font-weight: 600;
     width: 203px;
+    margin: 16px 0;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24.2px;
+    margin: 16px 0;
 }
 
 img {
@@ -48,20 +62,17 @@ img {
 }
 
 .outras-infos {
-    height: 151px;
     width: 364px;
 }
 
 .outras-infos ul {
-    gap: 8px;
-    height: 51px;
     list-style-type: none;
     width: 364px;
 }
 
 li {
     width: 296;
-    height: 19px;
+    height: 100%;
     font-size: 16px;
     line-height: 19.36px;
     color: #6C757D;

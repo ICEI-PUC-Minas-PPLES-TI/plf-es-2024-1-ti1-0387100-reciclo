@@ -1,6 +1,3 @@
-window.onload = function() {
-};
-
 function handleAcceptCollect() {
     let elementPedidoColeta = document.getElementById("pedido-coleta");
     elementPedidoColeta.className = "d-none";
@@ -10,6 +7,11 @@ function handleAcceptCollect() {
 }
 
 function handleRejectCollect() {
+    let elementCardStatus = document.getElementById("card-status");
+    elementCardStatus.className = "d-none";
+}
+
+function handleCancelCollect() {
     let elementCardStatus = document.getElementById("card-status");
     elementCardStatus.className = "d-none";
 }

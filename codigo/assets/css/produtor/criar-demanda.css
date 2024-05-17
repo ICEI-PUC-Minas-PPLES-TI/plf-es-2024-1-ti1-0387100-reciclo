@@ -6,17 +6,9 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-header{
-    height: 56px;
-    padding: 8px 16px;
-    background-color: #EFEFEF;
-}
 
-#logo{
-    width: 91px; 
-    height: 31px;
-    margin-top: 5px;
-}
+
+
 
 main{
     margin: 0 36px;

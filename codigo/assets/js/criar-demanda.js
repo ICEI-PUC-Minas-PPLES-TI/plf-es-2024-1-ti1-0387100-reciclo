@@ -26,7 +26,6 @@ function salvarDados(){
 
 }
 
-
 function obterID(){
     let id = parseInt(localStorage.getItem("id")) || 0;
     id++;

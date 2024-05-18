@@ -6,7 +6,9 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-
+main{
+    margin: 0 36px;
+}
 
 .botoes{
     display: flex;

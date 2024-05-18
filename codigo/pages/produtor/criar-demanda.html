@@ -33,7 +33,7 @@
     <main>
         <h1>Novo Resíduo</h1>
         <section>
-            <form action="">
+            <form id="demandaForm" onsubmit="salvarDados()">
                 <div class="campos">
                     <label for="peso">Peso</label>
                     <input type="text" id="peso" placeholder="16kg">
@@ -64,13 +64,14 @@
                         <option value="vidro">Vidro</option>
                     </select>
                     <div class="botoes">
-                        <button id="cancelar">Cancelar</button>
-                        <button id="adicionar">+ Adicionar</button>
+                        <button type="button" id="cancelar">Cancelar</button>
+                        <button type="submit" id="adicionar">+ Adicionar</button>
                     </div>
 
             </form>
         </section>
     </main>
+    <script src="../../assets/js/criar-demanda.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>

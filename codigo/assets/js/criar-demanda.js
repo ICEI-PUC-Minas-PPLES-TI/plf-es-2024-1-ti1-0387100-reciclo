@@ -4,7 +4,7 @@ const localInput = document.querySelector("#localColeta");
 const descricaoInput = document.querySelector("#descricaoResiduo");
 const dataInput = document.querySelector("#dataColeta");
 const horarioInput = document.querySelector("#horarioColeta");
-
+const tipoResiduo = document.querySelector("#tipoResiduo")
 
 
 function salvarDados(){
@@ -15,6 +15,7 @@ function salvarDados(){
     demanda.descricao = descricaoInput.value.trim();
     demanda.data = dataInput.value.trim();
     demanda.horario = horarioInput.value.trim();
+    demanda.tipo = tipoResiduo.value
 
     let demandas = JSON.parse(localStorage.getItem("demandas")) || [];
     demandas.push(demanda);

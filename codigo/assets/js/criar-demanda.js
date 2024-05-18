@@ -22,7 +22,8 @@ function salvarDados(){
     localStorage.setItem("demandas", JSON.stringify(demandas));
 
     form.reset();
-    window.location.href = "../codigo/pages/produtor/criar-demanda.html";
+    window.location.href = "/pages/produtor/visualizar-demanda-criada.html";
+
 
 }
 

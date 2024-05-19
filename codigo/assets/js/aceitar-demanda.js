@@ -1,34 +1,60 @@
 import { getIdsFromLocalStorage } from "./utils/localStorage.js";
 import { mockIdsInLocalStorage } from "./utils/mocks.js";
 
-function fetchUsuarios() {
-  return fetch('../../db/usuarios.json')
-      .then(response => response.json());
+let demandas = null;
+let usuarios = null;
+let usuario = null;
+let demanda = null;
+
+async function fetchUsuarios() {
+  const response = await fetch('../../db/usuarios.json');
+  const data = await response.json();
+  usuarios = data.usuarios;
 }
 
-function fetchDemandas() {
-  return fetch('../../db/demandas.json')
-      .then(response => response.json());
+async function fetchDemandas() {
+  const response = await fetch('../../db/demandas.json');
+  const data = await response.json();
+  demandas = data.demandas;
 }
 
-function populateHTML(usuario, demanda) {
+function populateHTML() {
+  console.log(usuario)
   document.getElementById('titulo-coletador').textContent = usuario.nome;
   document.querySelector('#caixa-descricao h2').textContent = `${demanda.tipoResiduo} - ${demanda.quantidade}`;
+  document.querySelector('#caixa-descricao p').textContent = demanda.descricao;
   document.querySelector('.outras-infos ul').innerHTML = `
       <li>${demanda.endereco}</li>
       <li>${demanda.programacaoColeta}</li>
   `;
 }
 
+const button = document.getElementById('botao-aceitar');
+button.addEventListener('click', function() {
+  if (usuario.ocupado) {
+    alert('Entregue sua coleta antes de aceitar outra demanda');
+    return;
+  }
+  if (demanda.idColetor) {
+    alert('Demanda já foi aceita por outro coletador');
+    return;
+  }
+  usuario.ocupado = true;
+  demanda.idColetor = usuario.id;
+  alert('Demanda aceita com sucesso!');
+  window.location.href = 'coletadores.html';
+});
+
 window.onload = function() {
   mockIdsInLocalStorage();
-  Promise.all([fetchUsuarios(), fetchDemandas()])
-    .then(([{ usuarios }, { demandas }]) => {
-      console.log(usuarios, demandas)
-      const id = getIdsFromLocalStorage();
-      const usuario = usuarios.find(usuario => usuario.id == id.usuario);
-      const demanda = demandas.find(demanda => demanda.id == id.demanda);
+  const ids = getIdsFromLocalStorage();
 
-      populateHTML(usuario, demanda);
-  });
+  async function fetchData() {
+    await fetchUsuarios();
+    await fetchDemandas();
+    usuario = usuarios.find(usuario => usuario.id == ids.usuario);
+    demanda = demandas.find(demanda => demanda.id == ids.demanda);
+    populateHTML();
+  }
+  fetchData();
 }

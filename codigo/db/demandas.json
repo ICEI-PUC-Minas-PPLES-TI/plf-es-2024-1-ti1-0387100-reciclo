@@ -25,7 +25,7 @@
             "image": "../../assets/images/lixo-coletador.png",
             "tipoResiduo": "Papel",
             "quantidade": "20kg",
-            "descricao": "Texto de exemplo para descrever a demanda respeito da demanda",
+            "descricao": "Embalagens de papelão utilizadas para transportar coxinhas halal.",
             "endereco": "R. Pernambuco, 781 - Savassi, Belo Horizonte - MG, 30130-151",
             "programacaoColeta": "30/06/2024 - 10hrs às 22:00hrs",
             "idProdutor": "5",

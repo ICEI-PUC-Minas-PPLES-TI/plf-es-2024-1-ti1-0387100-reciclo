@@ -1,5 +1,5 @@
 {
-    "demanda": [
+    "demandas": [
         {
             "ID": "1",
             "image": "../../assets/images/lixo-coletador.png",
@@ -25,8 +25,8 @@
             "image": "../../assets/images/lixo-coletador.png",
             "tipoResiduo": "Papel",
             "quantidade": "20kg",
-            "descricaoDemanda": "Texto de exemplo para descrever a demanda respeito da demanda",
-            "enderecoDemanda": "R. Pernambuco, 781 - Savassi, Belo Horizonte - MG, 30130-151",
+            "descricao": "Texto de exemplo para descrever a demanda respeito da demanda",
+            "endereco": "R. Pernambuco, 781 - Savassi, Belo Horizonte - MG, 30130-151",
             "programacaoColeta": "30/06/2024 - 10hrs às 22:00hrs",
             "idProdutor": "5",
             "idColetor": null,

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/coletador/concluir-demanda.css">
+    <link rel="stylesheet" href="../../assets/css/coletador/modal-concluir-demanda.css">
+    <title>Aceitar Demanda</title>
+</head>
+
+<body>
+    <header>
+
+    </header>
+    <main>
+        <h1 id="titulo-coletador"></h1>
+        <section>
+            <div>
+                <img id="imagemDemanda" src="" alt="imagem do resíduo selecionado">
+            </div>
+
+            <div id="caixa-descricao">
+                <h2 id="tipoResiduo"></h2>
+                <p></p>
+            </div>
+            <div class="outras-infos">
+                <ul>
+                    <li></li>
+                    <li class="horarioData"></li>
+                </ul>
+            </div>
+        </section>
+
+        <div id="acaoColeta">
+            <div class="acaoColeta">
+                <button id="btnConcluir" class="btnConcluirColeta"><img id="iconCheck" class="iconBtn"src="../../assets/images/verifica.png" alt="icon finalizar coleta">Concluir Coleta</button>
+                <button id="btnCancelar"><img class="iconBtn" src="../../assets/images/lixeira.png" alt="icon lixeira">Cancelar Coleta</button>
+            </div>
+        </div>
+                    
+        <div class="btnSolicitarColeta">
+            <button id="btnSolicitar">+ Solicitar Coleta</button>
+        </div>
+        <div class="divModal" id="divModal">
+            <div id="modalInput" class="modal">
+                <div class="textModal">
+                    <h2>Digite o código</h2>
+                    <p>Código fornecido pelo produtor do insumo<br><strong>(Código teste: 1234)</strong></p>
+                </div>
+                <div id="inputCode">
+                    <input type="number" class="input1" id="inpt1" maxlength="1">
+                    <input type="number" class="input2" id="inpt2" maxlength="1">
+                    <input type="number" class="input3" id="inpt3" maxlength="1">
+                    <input type="number" class="input4" id="inpt4" maxlength="1">
+                </div>
+                <button id="btnConfirmarCodigo" type="submit">Confirmar</button>
+            </div>
+
+            <div class="modalConcluido">
+                <div class="msgConcluido">
+                    <h2>Coleta concluída com sucesso!!!</h2>
+                </div>
+            </div>
+        </div>
+
+    </main>
+</body>
+
+<script src="../../assets/js/concluir-demanda.js"></script>
+
+</html>

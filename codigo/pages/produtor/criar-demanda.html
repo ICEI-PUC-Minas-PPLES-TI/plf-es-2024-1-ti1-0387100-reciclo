@@ -34,7 +34,7 @@
     <main>
         <h1>Novo Resíduo</h1>
         <section>
-            <form id="demandaForm" onsubmit="salvarDados()">
+            <form id="demandaForm" >
                 <div class="campos">
                     <label for="peso">Peso</label>
                     <input type="text" id="peso" placeholder="16kg">
@@ -67,7 +67,7 @@
                 </div>
                 <div class="botoes">
                     <button type="button" id="cancelar">Cancelar</button>
-                    <button type="submit" id="adicionar">+ Adicionar</button>
+                    <button type="button" id="adicionar" onclick="salvarDados()">+ Adicionar</button>
                 </div>
             </form>
 

@@ -4,8 +4,13 @@ const localInput = document.querySelector("#localColeta");
 const descricaoInput = document.querySelector("#descricaoResiduo");
 const dataInput = document.querySelector("#dataColeta");
 const horarioInput = document.querySelector("#horarioColeta");
-const tipoResiduo = document.querySelector("#tipoResiduo")
+const tipoResiduo = document.querySelector("#tipoResiduo");
+const buttonInput = document.querySelector("#adicionar");
 
+// buttonInput.addEventListener('submit', function(event) {
+//     event.preventDefault(); 
+
+// })
 
 function salvarDados(){
     let demanda = new Object();
@@ -22,7 +27,7 @@ function salvarDados(){
     localStorage.setItem("demandas", JSON.stringify(demandas));
 
     form.reset();
-    window.location.href = "/pages/produtor/visualizar-demanda-criada.html";
+    window.location.href = "../../pages/produtor/visualizar-demanda-criada.html";
 
 
 }

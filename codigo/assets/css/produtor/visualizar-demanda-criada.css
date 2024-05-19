@@ -10,6 +10,11 @@ main{
     margin: 0 36px;
 }
 
+
+h2{
+    text-transform: capitalize;
+}
+
 .botoes{
     display: flex;
     justify-content: flex-end;
@@ -33,4 +38,18 @@ main{
     background-color: white;
     color: #1D4F91;
     border: 1px solid #1D4F91;
+}
+
+#lista{
+    list-style-type: none;
+}
+
+#lista li {
+    padding: 4px;
+    border-bottom: 1px solid #E0E0E0;
+    text-transform: capitalize;
+}
+
+#card-body p {
+    text-transform: capitalize;
 }

@@ -39,8 +39,22 @@ function exibirDemanda() {
 
 }
 
+function removeDemanda() {
+    if (confirm("Deseja remover a demanda?")) {
+        const id = JSON.parse(localStorage.getItem("id"));
+        let demandas = JSON.parse(localStorage.getItem("demandas")) || [];
 
+        const demandaIndex = demandas.findIndex((d) => d.id === id);
 
+        if (demandaIndex !== -1) {
+            demandas.splice(demandaIndex, 1);
+            localStorage.setItem("demandas", JSON.stringify(demandas));
+
+        } else {
+            console.error('Demanda não encontrada');
+        }
+    }
+}
 
 window.addEventListener("load", () => {
 
@@ -48,9 +62,3 @@ window.addEventListener("load", () => {
 
 });
 
-    // tipoH2.innerText = demanda.tipo;
-    // pesoP.innerText = demanda.peso;
-    // descricaoP.innerText = demanda.descricao;
-    // localLi.innerText = demanda.local;
-    // dataLi.innerText = demanda.data;
-    // horarioLi.innerText = demanda.horario;

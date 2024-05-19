@@ -33,7 +33,7 @@
     <main>
         <h1>Editar demanda</h1>
         <section>
-            <form action="">
+            <form action="" id="demandaForm">
                 <div class="campos">
                     <label for="peso">Peso</label>
                     <input type="text" id="peso" placeholder="16kg">
@@ -64,8 +64,8 @@
                         <option value="vidro">Vidro</option>
                     </select>
                     <div class="botoes">
-                        <button id="cancelar">Cancelar</button>
-                        <button id="salvar">Salvar</button>
+                        <button type="button" id="cancelar">Cancelar</button>
+                        <button type="submit" id="salvar" onclick="atualizarDemanda()">Salvar</button>
                     </div>
 
             </form>
@@ -74,6 +74,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+        <script src="../../assets/js/editar-demanda.js"></script>
 </body>
 
 </html>

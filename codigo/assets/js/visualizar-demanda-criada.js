@@ -3,11 +3,11 @@
 function exibirDemanda() {
 
     const id = JSON.parse(localStorage.getItem("id"));
-    console.log(id);
+
     let demandas = JSON.parse(localStorage.getItem("demandas")) || [];
-    console.log(demandas);
+
     let demanda = demandas.find((d) => { return d.id == id; });
-    console.log(demanda);
+
 
     const tipoH2 = document.createElement("h2");
     tipoH2.innerText = demanda.tipo;

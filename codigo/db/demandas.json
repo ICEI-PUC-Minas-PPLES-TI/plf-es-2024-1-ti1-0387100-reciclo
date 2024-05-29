@@ -1,0 +1,24 @@
+{
+    "demanda": [
+        {
+            "ID": "1",
+            "image": "../../assets/images/lixo-coletador.png",
+            "tipoResiduo": "Plastico",
+            "quantidade": "10kg",
+            "descricaoDemanda": "Texto de exemplo para descrever a demanda cadastrada",
+            "enderecoDemanda": "Rua Alagoas, 1024, Savassi, 30130-167",
+            "programacaoColeta": "20/04/2024 - 08hrs às 17:00hrs",
+            "produtor": {
+                "ID": "2",
+                "nome": "Murilo Andrade",
+                "email": "muriloandrademachado@gmail.com"
+            },
+            "coletor": {
+                "ID": "3",
+                "nome": "Otávio Chaves",
+                "email": "teste@gmail.com"
+            },
+            "codigoDemanda": 1234
+        }
+    ]
+}

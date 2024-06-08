@@ -1,10 +1,10 @@
-export const postDelivery = async (delivery) => {
-  const response = await fetch('http://localhost:3000/deliveries', {
+export const postRating = async (rating) => {
+  const response = await fetch('http://localhost:3000/ratings', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(delivery),
+    body: JSON.stringify(rating),
   });
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
@@ -13,31 +13,31 @@ export const postDelivery = async (delivery) => {
   return data;
 }
 
-export const getDeliveries = async () => {
-  const response = await fetch('http://localhost:3000/deliveries');
+export const getRatings = async () => {
+  const response = await fetch('http://localhost:3000/ratings');
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
   }
-  const deliveries = await response.json();
-  return deliveries;
+  const ratings = await response.json();
+  return ratings;
 }
 
-export const getDelivery = async (id) => {
-  const response = await fetch(`http://localhost:3000/deliveries/${id}`);
+export const getRating = async (id) => {
+  const response = await fetch(`http://localhost:3000/ratings/${id}`);
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
   }
-  const delivery = await response.json();
-  return delivery;
+  const rating = await response.json();
+  return rating;
 }
 
-export const putDelivery = async (delivery) => {
-  const response = await fetch(`http://localhost:3000/deliveries/${delivery.id}`, {
+export const putRating = async (rating) => {
+  const response = await fetch(`http://localhost:3000/ratings/${rating.id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(delivery),
+    body: JSON.stringify(rating),
   });
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
@@ -46,8 +46,8 @@ export const putDelivery = async (delivery) => {
   return data;
 }
 
-export const deleteDelivery = async (id) => {
-  const response = await fetch(`http://localhost:3000/deliveries/${id}`, {
+export const deleteRating = async (id) => {
+  const response = await fetch(`http://localhost:3000/ratings/${id}`, {
     method: 'DELETE',
   });
   if (!response.ok) {

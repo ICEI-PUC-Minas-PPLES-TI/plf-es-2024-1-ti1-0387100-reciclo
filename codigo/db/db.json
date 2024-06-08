@@ -2,11 +2,19 @@
   "users": [
     {
       "id": 1,
+      "name": "Seu Barriga",
+      "email": "barriguinha@aluguel.com",
+      "cellphone": "31975881152",
+      "password": "12345678",
+      "userTypeId": 1
+    },
+    {
+      "id": 2,
       "name": "Madruguinha",
       "email": "vila@acapulco.com",
       "cellphone": "31975881152",
       "password": "12345678",
-      "userTypeId": 1
+      "userTypeId": 2
     }
   ],
   "userTypes": [
@@ -23,8 +31,8 @@
     {
       "id": 1,
       "collectorId": null,
-      "produccerId": 1,
-      "residuesTypeId": 3,
+      "producerId": 1,
+      "residuesTypesId": 3,
       "deliveryId": 1,
       "unity": "kg",
       "quantity": 100
@@ -48,13 +56,21 @@
       "name": "Metal"
     }
   ],
-  "delivery": [
+  "deliveries": [
     {
       "id": 1,
       "address": "Rua Alagoas, 1024, Savassi, Belo Horizonte",
-      "date": "2024-06-18T16:00:00Z",
-      "security_code": 9999,
+      "scheduleDate": "24/07/2024",
+      "securityCode": 9999,
       "concluded": false
+    }
+  ],
+  "ratings": [
+    {
+      "id": 1,
+      "collectorId": 2,
+      "producerId": 1,
+      "rating": 5
     }
   ]
 }

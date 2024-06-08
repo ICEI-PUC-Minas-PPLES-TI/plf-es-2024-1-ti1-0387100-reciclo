@@ -1,10 +1,10 @@
-export const postResiduo = async (residuo) => {
-  const response = await fetch('http://localhost:3000/residues', {
+export const postDelivery = async (delivery) => {
+  const response = await fetch('http://localhost:3000/deliveries', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(residuo),
+    body: JSON.stringify(delivery),
   });
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
@@ -13,31 +13,31 @@ export const postResiduo = async (residuo) => {
   return data;
 }
 
-export const getResiduos = async () => {
-  const response = await fetch('http://localhost:3000/residues');
+export const getDeliveries = async () => {
+  const response = await fetch('http://localhost:3000/deliveries');
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
   }
-  const residuos = await response.json();
-  return residuos;
+  const deliveries = await response.json();
+  return deliveries;
 }
 
-export const getResiduo = async (id) => {
-  const response = await fetch(`http://localhost:3000/residues/${id}`);
+export const getDelivery = async (id) => {
+  const response = await fetch(`http://localhost:3000/deliveries/${id}`);
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
   }
-  const residuo = await response.json();
-  return residuo;
+  const delivery = await response.json();
+  return delivery;
 }
 
-export const putResiduo = async (residuo) => {
-  const response = await fetch(`http://localhost:3000/residues/${residuo.id}`, {
+export const putDelivery = async (delivery) => {
+  const response = await fetch(`http://localhost:3000/deliveries/${delivery.id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(residuo),
+    body: JSON.stringify(delivery),
   });
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
@@ -46,8 +46,8 @@ export const putResiduo = async (residuo) => {
   return data;
 }
 
-export const deleteResiduo = async (id) => {
-  const response = await fetch(`http://localhost:3000/residues/${id}`, {
+export const deleteDelivery = async (id) => {
+  const response = await fetch(`http://localhost:3000/deliveries/${id}`, {
     method: 'DELETE',
   });
   if (!response.ok) {

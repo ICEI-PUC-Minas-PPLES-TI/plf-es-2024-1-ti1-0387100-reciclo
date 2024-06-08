@@ -1,10 +1,10 @@
-export const postResiduo = async (residuo) => {
-  const response = await fetch('http://localhost:3000/residues', {
+export const postRating = async (rating) => {
+  const response = await fetch('http://localhost:3000/ratings', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(residuo),
+    body: JSON.stringify(rating),
   });
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
@@ -13,31 +13,31 @@ export const postResiduo = async (residuo) => {
   return data;
 }
 
-export const getResiduos = async () => {
-  const response = await fetch('http://localhost:3000/residues');
+export const getRatings = async () => {
+  const response = await fetch('http://localhost:3000/ratings');
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
   }
-  const residuos = await response.json();
-  return residuos;
+  const ratings = await response.json();
+  return ratings;
 }
 
-export const getResiduo = async (id) => {
-  const response = await fetch(`http://localhost:3000/residues/${id}`);
+export const getRating = async (id) => {
+  const response = await fetch(`http://localhost:3000/ratings/${id}`);
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
   }
-  const residuo = await response.json();
-  return residuo;
+  const rating = await response.json();
+  return rating;
 }
 
-export const putResiduo = async (residuo) => {
-  const response = await fetch(`http://localhost:3000/residues/${residuo.id}`, {
+export const putRating = async (rating) => {
+  const response = await fetch(`http://localhost:3000/ratings/${rating.id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(residuo),
+    body: JSON.stringify(rating),
   });
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
@@ -46,8 +46,8 @@ export const putResiduo = async (residuo) => {
   return data;
 }
 
-export const deleteResiduo = async (id) => {
-  const response = await fetch(`http://localhost:3000/residues/${id}`, {
+export const deleteRating = async (id) => {
+  const response = await fetch(`http://localhost:3000/ratings/${id}`, {
     method: 'DELETE',
   });
   if (!response.ok) {

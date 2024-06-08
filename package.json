@@ -1,0 +1,22 @@
+{
+  "name": "plf-es-2024-1-ti1-0387100-reciclo",
+  "version": "1.0.0",
+  "description": "A coleta seletiva é um componente essencial do gerenciamento de resíduos sólidos urbanos. No entanto, a sua eficiência enfrenta desafios significativos. Este problema pode ser descrito como uma ineficiência na coleta, triagem e destinação adequada dos resíduos recicláveis. Entre os aspectos que contribuem para essa ineficiência estão: Cobertura Geográfica Limitada, Falta de Infraestrutura Adequada, Desconhecimento e Falta de Educação sobre o tema, Modelos de Coleta Diversificados, Falta de Monitoramento e Indicadores Claros.  Em resumo, a ineficiência na coleta seletiva é um problema multifacetado que requer abordagens integradas, educação pública e investimentos contínuos em infraestrutura e monitoramento.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2024-1-ti1-0387100-reciclo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2024-1-ti1-0387100-reciclo/issues"
+  },
+  "homepage": "https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2024-1-ti1-0387100-reciclo#readme"
+}

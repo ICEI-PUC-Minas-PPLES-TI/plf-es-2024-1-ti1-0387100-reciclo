@@ -48,6 +48,6 @@ document.addEventListener('click', function(e){
     });
     classStar.add('ativo');
     let avaliacaFinal = e.target.getAttribute('data-avaliacao')
-    // console.log(e.target.getAttribute('data-avaliacao'));
+    console.log(e.target.getAttribute('data-avaliacao'));
   }
 });

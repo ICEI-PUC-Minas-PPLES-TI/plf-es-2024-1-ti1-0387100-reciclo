@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Seu Barriga",
       "email": "barriguinha@aluguel.com",
       "cellphone": "31975881152",
@@ -9,7 +9,7 @@
       "userTypeId": 1
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Madruguinha",
       "email": "vila@acapulco.com",
       "cellphone": "31975881152",
@@ -19,18 +19,18 @@
   ],
   "userTypes": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Produtor"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Coletor"
     }
   ],
   "residues": [
     {
-      "id": 1,
-      "collectorId": null,
+      "id": "1",
+      "collectorId": "1",
       "producerId": 1,
       "residuesTypesId": 3,
       "deliveryId": 1,
@@ -40,25 +40,25 @@
   ],
   "residuesTypes": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Vidro"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Plastico"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Papel"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Metal"
     }
   ],
   "deliveries": [
     {
-      "id": 1,
+      "id": "1",
       "address": "Rua Alagoas, 1024, Savassi, Belo Horizonte",
       "scheduleDate": "24/07/2024",
       "securityCode": 9999,
@@ -67,7 +67,7 @@
   ],
   "ratings": [
     {
-      "id": 1,
+      "id": "1",
       "collectorId": 2,
       "producerId": 1,
       "rating": 5

@@ -46,6 +46,24 @@ export const putResiduo = async (residuo) => {
   return data;
 }
 
+export const alocarColetor = async (residueId, coletorId) => {
+  const response = await fetch(`http://localhost:3000/residues/${residueId}`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({collectorId: coletorId}),
+  });
+  console.log(response)
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+  const data = await response.json();
+  console.log(data)
+  return data;
+}
+
+
 export const deleteResiduo = async (id) => {
   const response = await fetch(`http://localhost:3000/residues/${id}`, {
     method: 'DELETE',

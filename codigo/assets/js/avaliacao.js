@@ -1,3 +1,5 @@
+import { postRating } from "../../service/avaliacao-service.js";
+
 let apiData = "../../db/demandas.json"
 
 fetch(apiData)
@@ -48,6 +50,14 @@ document.addEventListener('click', function(e){
     });
     classStar.add('ativo');
     let avaliacaFinal = e.target.getAttribute('data-avaliacao')
-    console.log(e.target.getAttribute('data-avaliacao'));
+    console.log(avaliacaFinal);
   }
 });
+
+// como criar um rating
+// const rating = {
+//   collectorId: numero,
+//   producerId: numero,
+//   rating: numero
+// }
+// postRating(rating);

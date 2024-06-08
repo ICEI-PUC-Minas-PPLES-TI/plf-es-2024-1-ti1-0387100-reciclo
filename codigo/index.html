@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +7,36 @@
     <title>Reciclo</title>
 </head>
 <body>
-    <main>
-        <div id="logoDiv">
-            <img src="assets/images/logo.svg" alt="logo Reciclo" style="height: 162px; width: 235px;">
+
+  <header class="header" style="display: flex;">
+    <a href="/" class="logo">
+      <img src="logo.jpg" alt="Logo">
+    </a>
+    <nav>
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle" class="menu-icon">
+        <i class="fa fa-bars"></i>
+        <i class="fa fa-times-circle"></i>
+      </label>
+      <ul class="menu">
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">QUEM SOMOS </a></li>
+        <li><a href="#">SERVIÇOS</a></li>
+        <li><a href="#">CONTATO</a></li>
+      </ul>
+    </nav>
+  </header>
+  <br> 
+  <h1> Coletas Disponiveis </h1>
+    <div class="grid-container">
+      <div class="grid-item">Item 1
+        <p> Rua Alagoas,1024,Savassi</p>
+        <input type="checkbox"  hidden>
+        <label for="adicionar1"   id="adicionar1"> 
+        <i class="fa-solid fa-square-plus" style="color: #16294b;"></i> 
+        </label>  
+        <div class="grid-item-content">
+          <label class="data-demand-id">1</label>
         </div>
 
         <form action="" method="post">

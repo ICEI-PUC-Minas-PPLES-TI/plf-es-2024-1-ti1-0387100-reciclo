@@ -1,59 +1,60 @@
 {
-    "users": [
-        {
-            "id": 1,
-            "name": "Joao Pedro",
-            "email": "jpvdo@yahoo.com",
-            "cellphone": "31975881152",
-            "password": "12345678",
-            "type_id": 1
-        }
-    ],
-    "type_user": [
-        {
-            "id": 1,
-            "name": "Produtor"
-        },
-        {
-            "id": 2,
-            "name": "Coletor"
-        }
-    ],
-    "residues": [
-        {
-            "id": 1,
-            "collector_id": null,
-            "produccer_id": 1,
-            "type_id": 3,
-            "delivery_id": 1,
-            "quantity": "100kg"
-        }
-    ],
-    "type_residues": [
-        {
-            "id": 1,
-            "name": "Vidro"
-        },
-        {
-            "id": 2,
-            "name": "Plastico"
-        },
-        {
-            "id": 3,
-            "name": "Papel"
-        },
-        {
-            "id": 4,
-            "name": "Metal"
-        }
-    ],
-    "delivery": [
-        {
-            "id": 1,
-            "address": "Rua Alagoas, 1024, Savassi, Belo Horizonte",
-            "date": "16:00:00 - 18/06/2024",
-            "security_code": 9999,
-            "concluded": false
-        }
-    ]
+  "users": [
+    {
+      "id": 1,
+      "name": "Madruguinha",
+      "email": "vila@acapulco.com",
+      "cellphone": "31975881152",
+      "password": "12345678",
+      "userTypeId": 1
+    }
+  ],
+  "userTypes": [
+    {
+      "id": 1,
+      "name": "Produtor"
+    },
+    {
+      "id": 2,
+      "name": "Coletor"
+    }
+  ],
+  "residues": [
+    {
+      "id": 1,
+      "collectorId": null,
+      "produccerId": 1,
+      "residuesTypeId": 3,
+      "deliveryId": 1,
+      "unity": "kg",
+      "quantity": 100
+    }
+  ],
+  "residuesTypes": [
+    {
+      "id": 1,
+      "name": "Vidro"
+    },
+    {
+      "id": 2,
+      "name": "Plastico"
+    },
+    {
+      "id": 3,
+      "name": "Papel"
+    },
+    {
+      "id": 4,
+      "name": "Metal"
+    }
+  ],
+  "delivery": [
+    {
+      "id": 1,
+      "address": "Rua Alagoas, 1024, Savassi, Belo Horizonte",
+      "date": "16:00:00 - 18/06/2024",
+      "security_code": 9999,
+      "concluded": false
+    }
+  ]
 }

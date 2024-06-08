@@ -52,7 +52,7 @@
     {
       "id": 1,
       "address": "Rua Alagoas, 1024, Savassi, Belo Horizonte",
-      "date": "16:00:00 - 18/06/2024",
+      "date": "2024-06-18T16:00:00Z",
       "security_code": 9999,
       "concluded": false
     }

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Avaliação</title>
+        <link rel="stylesheet" href="../../assets/css/coletador/concluir-demanda.css">
+        <link rel="stylesheet" href="../../assets/css/coletador/modal-concluir-demanda.css">
+    </head>
+<body>
+    <header>
+
+    </header>
+    <main>
+        <h1 id="titulo-coletador"></h1>
+        <section>
+            <div>
+                <img id="imagemDemanda" src="" alt="imagem do resíduo selecionado">
+            </div>
+
+            <div id="caixa-descricao">
+                <h2 id="tipoResiduo"></h2>
+                <p></p>
+            </div>
+            <div class="outras-infos">
+                <ul>
+                    <li></li>
+                    <li class="horarioData"></li>
+                </ul>
+            </div>
+        </section>
+
+        <div id="acaoColeta">
+            <div class="acaoColeta">
+                <button id="btnConcluir" class="btnConcluirColeta"><img id="iconCheck" class="iconBtn"src="../../assets/images/verifica.png" alt="icon finalizar coleta">Concluir Coleta</button>
+                <button id="btnCancelar"><img class="iconBtn" src="../../assets/images/lixeira.png" alt="icon lixeira">Cancelar Coleta</button>
+            </div>
+        </div>
+                    
+        <div class="btnSolicitarColeta">
+            <button id="btnSolicitar">+ Solicitar Coleta</button>
+        </div>
+        <div class="divModal" id="divModal">    
+            <div id="modalInput" class="modal">
+                <div class="textModal">
+                    <h2>Avalie este usuário</h2>
+                </div>
+                <ul class="avaliacao">  
+                    <li class="star-icon ativo" data-avaliacao="1"></li>
+                    <li class="star-icon" data-avaliacao="2"></li>
+                    <li class="star-icon" data-avaliacao="3"></li>
+                    <li class="star-icon" data-avaliacao="4"></li>
+                    <li class="star-icon" data-avaliacao="5"></li>
+                  </ul>
+                <button id="btnConfirmarCodigo" type="submit">Confirmar</button>
+            </div>
+
+            <div class="modalConcluido">
+                <div class="msgConcluido">
+                    <h2>Coleta concluída com sucesso!!!</h2>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <script src="../../assets/js/avaliacao.js"></script>
+    
+</body>
+</html>

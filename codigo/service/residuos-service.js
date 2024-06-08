@@ -1,5 +1,5 @@
-const postResiduo = async (residuo) => {
-  const response = await fetch('http://localhost:3000/residuos', {
+export const postResiduo = async (residuo) => {
+  const response = await fetch('http://localhost:3000/residues', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -13,8 +13,8 @@ const postResiduo = async (residuo) => {
   return data;
 }
 
-const getResiduos = async () => {
-  const response = await fetch('http://localhost:3000/residuos');
+export const getResiduos = async () => {
+  const response = await fetch('http://localhost:3000/residues');
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
   }
@@ -22,8 +22,8 @@ const getResiduos = async () => {
   return residuos;
 }
 
-const getResiduo = async (id) => {
-  const response = await fetch(`http://localhost:3000/residuos/${id}`);
+export const getResiduo = async (id) => {
+  const response = await fetch(`http://localhost:3000/residues/${id}`);
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
   }
@@ -31,8 +31,8 @@ const getResiduo = async (id) => {
   return residuo;
 }
 
-const putResiduo = async (residuo) => {
-  const response = await fetch(`http://localhost:3000/residuos/${residuo.id}`, {
+export const putResiduo = async (residuo) => {
+  const response = await fetch(`http://localhost:3000/residues/${residuo.id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
@@ -46,8 +46,8 @@ const putResiduo = async (residuo) => {
   return data;
 }
 
-const deleteResiduo = async (id) => {
-  const response = await fetch(`http://localhost:3000/residuos/${id}`, {
+export const deleteResiduo = async (id) => {
+  const response = await fetch(`http://localhost:3000/residues/${id}`, {
     method: 'DELETE',
   });
   if (!response.ok) {

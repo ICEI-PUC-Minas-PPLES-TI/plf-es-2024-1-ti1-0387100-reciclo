@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desenvolvimento de Interfaces Web | Gráficos com o ChartJS</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../assets/css/coletador/pagina-grafico.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -30,13 +31,16 @@
             </div>
         </nav>
     </header>
-    <div class="container">
-        <h1>Dados das coletas</h1>
+    <main class="container">
         <div class="col">
-            <h2>Gráfico de Pizza</h2>
-            <canvas id="myPieChart" width="400" height="400"></canvas>
+            <h1 class="mt-3 text-center">Dados das coletas</h1>
+             <div class="d-flex justify-content-center w-100 mt-5 " style="min-width: 100%;">
+                <div class="d-flex w-100 align-itens-center align-middle" style="max-width: 400px; max-height: 400px;">
+                    <canvas id="myPieChart" max-width="400" max-height="400"></canvas>
+                </div>
+            </div>
         </div>
-    </div>
+    </main>
     <script type="module" src="../../assets/js/grafico.js"></script>    
 </body>
 </html>

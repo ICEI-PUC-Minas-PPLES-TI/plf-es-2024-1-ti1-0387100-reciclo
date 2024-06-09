@@ -36,6 +36,46 @@
       "deliveryId": 1,
       "unity": "kg",
       "quantity": 100
+    },
+
+    {
+      "id": 1,
+      "collectorId": null,
+      "producerId": 1,
+      "residuesTypesId": 2,
+      "deliveryId": 1,
+      "unity": "kg",
+      "quantity": 100
+    },
+
+    {
+      "id": 1,
+      "collectorId": null,
+      "producerId": 1,
+      "residuesTypesId": 1,
+      "deliveryId": 1,
+      "unity": "kg",
+      "quantity": 100
+    },
+
+    {
+      "id": 1,
+      "collectorId": null,
+      "producerId": 1,
+      "residuesTypesId": 1,
+      "deliveryId": 1,
+      "unity": "kg",
+      "quantity": 100
+    },
+
+    {
+      "id": 1,
+      "collectorId": null,
+      "producerId": 1,
+      "residuesTypesId": 4,
+      "deliveryId": 1,
+      "unity": "kg",
+      "quantity": 100
     }
   ],
   "residuesTypes": [

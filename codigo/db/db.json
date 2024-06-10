@@ -73,9 +73,9 @@
       "collectorId": null,
       "producerId": 1,
       "residuesTypesId": 4,
-      "deliveryId": 5,
+      "deliveryId": 1,
       "unity": "kg",
-      "quantity": 15
+      "quantity": 100
     }
   ],
   "residuesTypes": [

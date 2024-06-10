@@ -11,7 +11,7 @@ async function populateDemandas() {
     const entrega = await getDelivery(demanda.deliveryId);
     console.log(entrega)
     const demandaDiv = document.createElement('div');
-    demandaDiv.className = 'demanda';
+    demandaDiv.className = 'demanda mb-3';
 
     const demandaInfo = document.createElement('div');
     demandaInfo.className = 'demanda-info';

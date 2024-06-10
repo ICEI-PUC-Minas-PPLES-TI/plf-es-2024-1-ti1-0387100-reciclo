@@ -20,15 +20,15 @@ main{
 .lista-demanda{
     display: flex;
     flex-direction: column;
-    border: 1px solid #E0E0E0;
-    border-radius: 8px;
 }
 
 .demanda{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #E0E0E0;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    padding-top: 4px !important;
     padding: 0 12px;
 }
 

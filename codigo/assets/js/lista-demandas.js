@@ -2,14 +2,18 @@ import { getDelivery } from "../../service/entrega-service.js";
 import { getResiduos } from "../../service/residuos-service.js";
 import { tipoResiduos } from "./utils/tipo-residuos.js";
 
-async function populateDemandas() {
+async function populateDemandas(tipoSelecionado = 'Todos') {
   const todasDemandas = await getResiduos();
-  const demandas = todasDemandas.filter(residuo => !residuo.collectorId);
+  let demandas = todasDemandas.filter(residuo => !residuo.collectorId);
   const listaDemanda = document.querySelector('.lista-demanda');
+  listaDemanda.innerHTML = '';
+  if (tipoSelecionado !== 'Todos') {
+    console.log(demandas)
+    demandas = demandas.filter(demanda => tipoResiduos[demanda.residuesTypesId] === tipoSelecionado);
+  }
 
   demandas.forEach(async (demanda) => {
     const entrega = await getDelivery(demanda.deliveryId);
-    console.log(entrega)
     const demandaDiv = document.createElement('div');
     demandaDiv.className = 'demanda mb-3';
 
@@ -43,5 +47,13 @@ async function populateDemandas() {
   });
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+  const selectElement = document.getElementById('materialType');
 
-document.addEventListener('DOMContentLoaded', populateDemandas);
+  selectElement.addEventListener('change', (event) => {
+    const selectedValue = event.target.value;
+    console.log('Selected material type:', selectedValue);
+    populateDemandas(selectedValue);
+  });
+  populateDemandas();
+});

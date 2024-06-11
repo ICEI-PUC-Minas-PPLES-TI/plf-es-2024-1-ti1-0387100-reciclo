@@ -1,5 +1,5 @@
 export const postUsuario = async (usuario) => {
-  const response = await fetch('http://localhost:3000/usuarios', {
+  const response = await fetch('http://localhost:3000/users', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -14,7 +14,7 @@ export const postUsuario = async (usuario) => {
 }
 
 export const getUsuarios = async () => {
-  const response = await fetch('http://localhost:3000/usuarios');
+  const response = await fetch('http://localhost:3000/users');
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
   }
@@ -32,7 +32,7 @@ export const getUsuario = async (id) => {
 }
 
 export const putUsuario = async (usuario) => {
-  const response = await fetch(`http://localhost:3000/usuarios/${usuario.id}`, {
+  const response = await fetch(`http://localhost:3000/users/${usuario.id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
@@ -47,7 +47,7 @@ export const putUsuario = async (usuario) => {
 }
 
 export const deleteUsuario = async (id) => {
-  const response = await fetch(`http://localhost:3000/usuarios/${id}`, {
+  const response = await fetch(`http://localhost:3000/users/${id}`, {
     method: 'DELETE',
   });
   if (!response.ok) {

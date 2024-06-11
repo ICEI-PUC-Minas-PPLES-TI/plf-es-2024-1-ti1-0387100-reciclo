@@ -4,7 +4,7 @@
       "id": "1",
       "name": "Seu Barriga",
       "email": "barriguinha@aluguel.com",
-      "cellphone": "31975881152",
+      "cellphone": "31975881150",
       "password": "12345678",
       "userTypeId": 1
     },
@@ -37,9 +37,8 @@
       "unity": "kg",
       "quantity": 100
     },
-
     {
-      "id": 1,
+      "id": "1",
       "collectorId": null,
       "producerId": 1,
       "residuesTypesId": 2,
@@ -47,9 +46,8 @@
       "unity": "kg",
       "quantity": 50
     },
-
     {
-      "id": 1,
+      "id": "1",
       "collectorId": null,
       "producerId": 1,
       "residuesTypesId": 1,
@@ -57,9 +55,8 @@
       "unity": "kg",
       "quantity": 30
     },
-
     {
-      "id": 1,
+      "id": "1",
       "collectorId": null,
       "producerId": 1,
       "residuesTypesId": 1,
@@ -67,9 +64,8 @@
       "unity": "kg",
       "quantity": 3
     },
-
     {
-      "id": 1,
+      "id": "1",
       "collectorId": null,
       "producerId": 1,
       "residuesTypesId": 4,

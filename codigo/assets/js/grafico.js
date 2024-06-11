@@ -1,9 +1,23 @@
 import { getResiduos } from "../../service/residuos-service.js";
+import { tipoResiduos } from "./utils/tipo-residuos.js";
+
+tipoResiduos
 
 // Função assíncrona para obter os resíduos
 const fetchResiduos = async () => {
    return await getResiduos();
 }
+
+//const typeChart = document.getElementById('typeChart').value;
+
+
+
+const residuos = await fetchResiduos();
+console.log(residuos);
+console.log(residuos.length);
+
+// Filtro para pega o id do coletor
+const filteredResidues = residuos.filter((residuos) => residuos.collectorId === 1);
 
 // Função para contar os tipos de resíduos
 const countResiduos = (residuos) => {
@@ -16,21 +30,13 @@ const countResiduos = (residuos) => {
     }, {});
 }
 
-// Chamada da função assíncrona e contagem dos resíduos
-const tipoResiduoLabels = {
-    1: 'Vidro',
-    2: 'Plástico',
-    3: 'Papel',
-    4: 'Metal',
-};
-
 (async () => {
     try {
-        const residuos = await fetchResiduos();
-        const contagemResiduos = countResiduos(residuos);
+        const contagemResiduos = countResiduos(filteredResidues);
+
         console.log(contagemResiduos);
 
-        const labels = Object.keys(contagemResiduos).map(key => tipoResiduoLabels[key]);
+        const labels = Object.keys(contagemResiduos).map(key => tipoResiduos[key]);
         const data = Object.values(contagemResiduos);
         
                 const ctx = document.getElementById('myPieChart').getContext('2d');

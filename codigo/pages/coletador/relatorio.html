@@ -34,9 +34,19 @@
     <main class="container">
         <div class="col">
             <h1 class="mt-3 text-center">Dados das coletas</h1>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown button
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </div>
              <div class="d-flex justify-content-center w-100 mt-5 " style="min-width: 100%;">
-                <div class="d-flex w-100 align-itens-center align-middle" style="max-width: 400px; max-height: 400px;">
-                    <canvas id="myPieChart" max-width="400" max-height="400"></canvas>
+                <div class="w-100" style="max-width: 600px; max-height: 600px;">
+                    <canvas id="myPieChart" min-width="400" min-height="400"></canvas>
                 </div>
             </div>
         </div>

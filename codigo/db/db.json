@@ -30,7 +30,7 @@
   "residues": [
     {
       "id": "1",
-      "collectorId": "1",
+      "collectorId": 1,
       "producerId": 1,
       "residuesTypesId": 3,
       "deliveryId": 1,
@@ -39,7 +39,7 @@
     },
     {
       "id": "1",
-      "collectorId": null,
+      "collectorId": 1,
       "producerId": 1,
       "residuesTypesId": 2,
       "deliveryId": 2,
@@ -48,7 +48,7 @@
     },
     {
       "id": "1",
-      "collectorId": null,
+      "collectorId": 1,
       "producerId": 1,
       "residuesTypesId": 1,
       "deliveryId": 3,
@@ -57,7 +57,7 @@
     },
     {
       "id": "1",
-      "collectorId": null,
+      "collectorId": 1,
       "producerId": 1,
       "residuesTypesId": 1,
       "deliveryId": 4,
@@ -66,7 +66,7 @@
     },
     {
       "id": "1",
-      "collectorId": null,
+      "collectorId": 1,
       "producerId": 1,
       "residuesTypesId": 4,
       "deliveryId": 1,

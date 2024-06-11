@@ -5,7 +5,6 @@ const inputFields = ["name", "email", "password", "cellphone"]
 async function setupPageUserProfile() {
     const userId = getQueryParams();
     const user = await getUsuario(userId);
-    console.log(user);
     
     for (let i = 0; i < inputFields.length; i++) {
         changeInputValue(inputFields[i], user[inputFields[i]]);
@@ -13,6 +12,7 @@ async function setupPageUserProfile() {
 
     document.getElementById('edit-button').addEventListener('click', handleEditFields);
     document.getElementById('save-button').addEventListener('click', handleSaveFields);
+    document.getElementById('cancel-button').addEventListener('click', handleCancelFields);
 }
 
 function getQueryParams() {
@@ -35,10 +35,13 @@ function handleEditFields() {
     });
 
     const saveButtonElement = document.getElementById("save-button");
-    saveButtonElement.classList.remove("d-none")
+    saveButtonElement.classList.remove("d-none");
+    
+    const cancelButtonElement = document.getElementById("cancel-button");
+    cancelButtonElement.classList.remove("d-none");
 
     const editButtonElement = document.getElementById("edit-button");
-    editButtonElement.classList.add("d-none")
+    editButtonElement.classList.add("d-none");
 
 }
 
@@ -50,9 +53,12 @@ async function handleSaveFields() {
     inputFields.forEach(function(input) {
         userData[input.id] = input.value;
     });
-    console.log(userData)
     
     await putUsuario(userData);
+    window.location.reload();
+}
+
+function handleCancelFields(){
     window.location.reload();
 }
 

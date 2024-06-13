@@ -6,10 +6,16 @@ async function populateDemandas(tipoSelecionado = 'Todos') {
   const todasDemandas = await getResiduos();
   let demandas = todasDemandas.filter(residuo => !residuo.collectorId);
   const listaDemanda = document.querySelector('.lista-demanda');
+  const txtSemDemanda = document.getElementById('secundaria');
   listaDemanda.innerHTML = '';
   if (tipoSelecionado !== 'Todos') {
-    console.log(demandas)
     demandas = demandas.filter(demanda => tipoResiduos[demanda.residuesTypesId] === tipoSelecionado);
+  }
+
+  if (demandas.length > 0) {
+    txtSemDemanda.className = "d-none";
+  } else {
+    txtSemDemanda.className = "d-flex";
   }
 
   demandas.forEach(async (demanda) => {
@@ -26,7 +32,7 @@ async function populateDemandas(tipoSelecionado = 'Todos') {
     nameP.appendChild(strongName);
 
     const addressP = document.createElement('p');
-    addressP.textContent = entrega.address; // Assuming 'address' is the property for the demanda's address
+    addressP.textContent = entrega.address; 
 
     demandaInfo.appendChild(nameP);
     demandaInfo.appendChild(addressP);
@@ -35,7 +41,7 @@ async function populateDemandas(tipoSelecionado = 'Todos') {
     buttonDiv.className = 'button';
 
     const addButton = document.createElement('button');
-    addButton.id = 'adicionar'; // Note: IDs should be unique. Consider using a class or appending a unique identifier.
+    addButton.id = 'adicionar';
     addButton.textContent = '+';
 
     buttonDiv.appendChild(addButton);

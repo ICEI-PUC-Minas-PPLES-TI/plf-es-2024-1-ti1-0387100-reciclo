@@ -6,31 +6,12 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-main{
-    margin: 16px 36px;
-}
-
-h1{
-    
-    font-size: 28px;
-    margin: 32px 0 12px 0;
-}
-
-button {
-    height: 38px;
-    width: 43px;
-    background-color: white;
-    border: 1px solid #1D4F91;
-    border-radius: 8px;
-}
-
 #principal{
     display: flex;
     gap: 8px;
 }
 
 #secundaria{
-    margin-top: 64px;
     display: flex;
     justify-content: center;
     align-items: center;

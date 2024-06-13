@@ -44,7 +44,7 @@
   "residues": [
     {
       "id": "1",
-      "collectorId": 1,
+      "collectorId": null,
       "producerId": 1,
       "residuesTypesId": 3,
       "deliveryId": 1,

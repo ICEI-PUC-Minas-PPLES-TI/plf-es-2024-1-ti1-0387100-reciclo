@@ -79,4 +79,15 @@ export class ResidueService {
     return data;
   }
 
+  async getResidueByProducerId(producerId) {
+    const response = await fetch(`${this.urlBase}?producerId=${producerId}`);
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    const residuesList = await response.json();
+    return residuesList;
+  }
+
 }

@@ -20,3 +20,15 @@
 #secundaria p{
     color: #B0B0B0;
 }
+
+.card_style{
+    all: unset !important;
+    padding: 10px !important;
+    color: gray !important;
+    font-size: 14px !important;
+}
+
+.title_card{
+    color: black !important;
+    font-weight: bold !important;
+}

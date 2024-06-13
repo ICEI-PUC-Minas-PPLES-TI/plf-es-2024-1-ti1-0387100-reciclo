@@ -71,7 +71,6 @@ export class ResidueService {
       },
       body: JSON.stringify({collectorId: coletorId}),
     });
-    console.log(response)
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }

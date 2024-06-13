@@ -1,16 +1,17 @@
-export class UserService {
+export class RequestService {
 
   constructor(){
-    this.urlBase = "http://localhost:3000/users";
+    this.urlBase = "http://localhost:3000/requests";
+    // this.urlBase = "https://json-server-reciclo.vercel.app/requests";
   }
 
-  async postUser(user){
+  async postRequest(request){
     const response = await fetch(this.urlBase, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(user),
+      body: JSON.stringify(request),
     });
 
     if (!response.ok) {
@@ -21,46 +22,46 @@ export class UserService {
     return data;
   }
 
-  async getUsers() {
+  async getRequests() {
     const response = await fetch(this.urlBase);
 
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
 
-    const users = await response.json();
-    return users;
+    const requests = await response.json();
+    return requests;
   }
 
-  async getUser(id) {
+  async getRequest(id) {
     const response = await fetch(`${this.urlBase}/${id}`);
 
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
     
-    const user = await response.json();
-    return user;
+    const request = await response.json();
+    return request;
   }
 
-  async getUserByEmail(email) {
-    const response = await fetch(`${this.urlBase}?email=${email}`);
+  async getRequestsByResidueId(residueId) {
+    const response = await fetch(`${this.urlBase}?residue=${residueId}`);
 
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
     
-    const user = await response.json();
-    return user;
+    const request = await response.json();
+    return request;
   }
 
-  async putUser(user) {
-    const response = await fetch(`${this.urlBase}/${user.id}`, {
+  async putRequest(request) {
+    const response = await fetch(`${this.urlBase}/${request.id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(user),
+      body: JSON.stringify(request),
     });
 
     if (!response.ok) {
@@ -71,7 +72,7 @@ export class UserService {
     return data;
   }
 
-  async deleteUser(id) {
+  async deleteRequest(id) {
     const response = await fetch(`${this.urlBase}/${id}`, {
       method: 'DELETE',
     });

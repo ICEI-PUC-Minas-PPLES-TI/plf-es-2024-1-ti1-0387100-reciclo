@@ -25,10 +25,8 @@ async function handleLogin(event) {
             localStorage.setItem("id", user.id);
             localStorage.setItem("userTypeId", user.userTypeId);
             if (user.userTypeId === "1") {
-                console.log("produtor")
                 window.location.href = "produtor/meus-residuos.html";
                 } else if (user.userTypeId === "2") {
-                console.log("coletor")
                 window.location.href = "coletador/lista-demandas.html";
             }
         } else {

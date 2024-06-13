@@ -51,6 +51,30 @@
       "unity": "kg",
       "quantity": 100,
       "description": "Descricao"
+    },
+    {
+      "id": "c0ff",
+      "collectorId": null,
+      "producerId": "2f5f",
+      "residuesTypeId": "4",
+      "deliveryId": "cbf4",
+      "unity": "kg",
+      "quantity": "100",
+      "description": "Material já separado"
+    }
+  ],
+  "requests": [
+    {
+      "id": "1",
+      "collectorId": "3b0e",
+      "residue": "c0ff",
+      "accept": false
+    },
+    {
+      "id": "2",
+      "collectorId": "2",
+      "residue": "c0ff",
+      "accept": false
     }
   ],
   "residuesTypes": [
@@ -77,6 +101,13 @@
       "address": "Rua Alagoas, 1024, Savassi, Belo Horizonte",
       "scheduleDate": "24/07/2024",
       "securityCode": 9999,
+      "concluded": false
+    },
+    {
+      "id": "cbf4",
+      "address": "Rua Alagoas, 904, Savassi, Belo Horizonte",
+      "scheduleDate": "2024-06-28",
+      "securityCode": 6677,
       "concluded": false
     }
   ],

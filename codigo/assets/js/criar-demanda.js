@@ -36,7 +36,7 @@ async function handleAddResidue(event) {
         const residueData = {
             collectorId: null,
             producerId: getUserId(),
-            residuesTypeId: residueType,
+            residuesTypesId: residueType,
             deliveryId: deliveryCreated.id,
             unity: unity,
             quantity: quantity,

@@ -51,7 +51,7 @@ async function updateRequests() {
 
 function createCardResidueData(residue, deliveryResidue) {
     const cardResidueData = {}
-    cardResidueData.type = tipoResiduos[residue.residuesTypeId];
+    cardResidueData.type = tipoResiduos[residue.residuesTypesId];
     cardResidueData.description = residue.description;
     cardResidueData.date = deliveryResidue.scheduleDate;
     cardResidueData.address = deliveryResidue.address;
@@ -77,14 +77,6 @@ function createCardRequestData(collector, request) {
 function getResidueId(){
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get('id');
-}
-
-function isUserProducer(){
-    const userTypeId = localStorage.getItem("userTypeId");
-    if (parseInt(userTypeId) === 1) {
-        return true;
-    }
-    return false;
 }
 
 window.addEventListener("load", setupPagetResidue);

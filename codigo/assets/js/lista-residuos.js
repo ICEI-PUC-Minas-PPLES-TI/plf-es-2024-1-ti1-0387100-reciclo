@@ -28,7 +28,7 @@ async function setupPageListResidues() {
 
 function createCardResidueData(residue, deliveryResidue) {
     const cardResidueData = {}
-    cardResidueData.type = tipoResiduos[residue.residuesTypeId];
+    cardResidueData.type = tipoResiduos[residue.residuesTypesId];
     cardResidueData.address = deliveryResidue.address;
     cardResidueData.residueId = residue.id;
 

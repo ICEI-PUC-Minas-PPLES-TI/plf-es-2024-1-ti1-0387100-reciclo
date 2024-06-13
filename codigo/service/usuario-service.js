@@ -5,7 +5,6 @@ export class UserService {
   }
 
   async postUser(user){
-    console.log(user)
     const response = await fetch(this.urlBase, {
       method: 'POST',
       headers: {
@@ -19,6 +18,7 @@ export class UserService {
     }
 
     const data = await response.json();
+    console.log(data);
     return data;
   }
 
@@ -35,6 +35,17 @@ export class UserService {
 
   async getUser(id) {
     const response = await fetch(`${this.urlBase}/${id}`);
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    const user = await response.json();
+    return user;
+  }
+
+  async getUserByEmail(email) {
+    const response = await fetch(`${this.urlBase}?email=${email}`);
 
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);

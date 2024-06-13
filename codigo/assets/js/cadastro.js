@@ -7,7 +7,7 @@ function observerSubmitForm() {
     buttonRegister.addEventListener('submit', handleRegister)
 }
 
-function handleRegister(event) {
+async function handleRegister(event) {
     event.preventDefault(); 
     try {
         const email = document.getElementById("email").value;
@@ -19,7 +19,8 @@ function handleRegister(event) {
         const radioButtonValue = getRadioButtonOption(radioButtons);
 
         validateFormFields(email, name, cellphone, password, confirmPassword, radioButtonValue)
-        
+        await verifyEmail(email, name);
+
         const userData = {
             email: email,
             name: name,
@@ -27,8 +28,9 @@ function handleRegister(event) {
             userTypeId: radioButtonValue
         }
 
-        console.log('create user');
-        userService.postUser(userData);
+        const userCreated = await userService.postUser(userData);
+        if(userCreated) window.location.href = 'index.html';
+
     } catch (error) {
         alert(error.message)
         console.error(error)
@@ -50,6 +52,7 @@ function validateFormFields(email, name, cellphone, password, confirmPassword, r
     if (!password) throw new Error("O campo senha é obrigatório.");
     if (!confirmPassword) throw new Error("O campo confirmar senha é obrigatório.");
     if (!radioButtonValue) throw new Error("O campo de escolha de papel é obrigatório.");
+
     comparePassword(password,confirmPassword)
 }
 
@@ -57,6 +60,12 @@ function comparePassword(pass, confirmPass) {
     if (pass != confirmPass) {
         throw new Error("Senhas não conferem")
     }
+}
+
+async function verifyEmail(email) {
+    const existUserEmail = await userService.getUserByEmail(email);
+    console.log(existUserEmail.length);
+    if (existUserEmail.length > 0) throw new Error("Email já cadastrado");
 }
 
 window.addEventListener("load", observerSubmitForm);

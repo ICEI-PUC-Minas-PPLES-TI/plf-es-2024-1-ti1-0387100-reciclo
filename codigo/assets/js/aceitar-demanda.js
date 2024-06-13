@@ -1,9 +1,11 @@
-import { alocarColetor, getResiduo } from '../../service/residuos-service.js';
-import { getTipoResiduo } from '../../service/tiposResiduos-service.js';
-import { getDelivery } from '../../service/entrega-service.js';
+import {ResidueService} from '../../service/residuos-service.js';
+import {getTipoResiduo} from '../../service/tiposResiduos-service.js';
+import {DeliveryService} from '../../service/entrega-service.js';
 import {UserService} from '../../service/usuario-service.js';
 
 const userService = new UserService();
+const residueService = new ResidueService();
+const deliveryService = new DeliveryService();
 let coletor = null;
 let demanda = null;
 let tipoResiduo = null;
@@ -15,10 +17,10 @@ async function fetchUsuario(id) {
 }
 
 async function fetchDemanda(id) {
-  const response = await getResiduo(id);
+  const response = await residueService.getResiduo(id);
   demanda = await response;
   tipoResiduo = await getTipoResiduo(demanda.residuesTypesId);
-  delivery = await getDelivery(demanda.deliveryId);
+  delivery = await deliveryService.getDelivery(demanda.deliveryId);
 }
 
 async function populateHTML() {
@@ -41,7 +43,7 @@ button.addEventListener('click', function() {
     alert('Demanda já foi aceita por outro coletor');
     return;
   }
-  alocarColetor(demanda.id, coletor.id);
+  residueService.alocarColetor(demanda.id, coletor.id);
   alert('Demanda aceita com sucesso!');
 });
 

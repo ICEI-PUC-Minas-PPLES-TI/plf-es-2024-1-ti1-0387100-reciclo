@@ -1,58 +1,65 @@
-export const postDelivery = async (delivery) => {
-  const response = await fetch('http://localhost:3000/deliveries', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(delivery),
-  });
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
-  }
-  const data = await response.json();
-  return data;
-}
+export class DeliveryService {
 
-export const getDeliveries = async () => {
-  const response = await fetch('http://localhost:3000/deliveries');
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
+  constructor(){
+    this.urlBase = "http://localhost:3000/deliveries";
   }
-  const deliveries = await response.json();
-  return deliveries;
-}
 
-export const getDelivery = async (id) => {
-  const response = await fetch(`http://localhost:3000/deliveries/${id}`);
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
+  async postDelivery(delivery) {
+    const response = await fetch(this.urlBase, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(delivery),
+    });
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    return data;
   }
-  const delivery = await response.json();
-  return delivery;
-}
 
-export const putDelivery = async (delivery) => {
-  const response = await fetch(`http://localhost:3000/deliveries/${delivery.id}`, {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(delivery),
-  });
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
+  async getDeliveries() {
+    const response = await fetch(this.urlBase);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const deliveries = await response.json();
+    return deliveries;
   }
-  const data = await response.json();
-  return data;
-}
 
-export const deleteDelivery = async (id) => {
-  const response = await fetch(`http://localhost:3000/deliveries/${id}`, {
-    method: 'DELETE',
-  });
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
+  async getDelivery(id) {
+    const response = await fetch(`${this.urlBase}/${id}`);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const delivery = await response.json();
+    return delivery;
   }
-  const data = await response.json();
-  return data;
+  
+  async putDelivery(delivery) {
+    const response = await fetch(`${this.urlBase}/${delivery.id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(delivery),
+    });
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    return data;
+  }
+
+  async deleteDelivery(id) {
+    const response = await fetch(`${this.urlBase}/${id}`, {
+      method: 'DELETE',
+    });
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    return data;
+  }
 }

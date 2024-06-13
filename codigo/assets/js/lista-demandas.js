@@ -1,9 +1,12 @@
-import { getDelivery } from "../../service/entrega-service.js";
-import { getResiduos } from "../../service/residuos-service.js";
+import { ResidueService } from "../../service/residuos-service.js";
 import { tipoResiduos } from "./utils/tipo-residuos.js";
+import { DeliveryService } from '../../service/entrega-service.js';
+
+const deliveryService = new DeliveryService();
+const residueService = new ResidueService();
 
 async function populateDemandas(tipoSelecionado = 'Todos') {
-  const todasDemandas = await getResiduos();
+  const todasDemandas = await residueService.getResiduos();
   let demandas = todasDemandas.filter(residuo => !residuo.collectorId);
   const listaDemanda = document.querySelector('.lista-demanda');
   const txtSemDemanda = document.getElementById('secundaria');
@@ -19,7 +22,7 @@ async function populateDemandas(tipoSelecionado = 'Todos') {
   }
 
   demandas.forEach(async (demanda) => {
-    const entrega = await getDelivery(demanda.deliveryId);
+    const entrega = await deliveryService.getDelivery(demanda.deliveryId);
     const demandaDiv = document.createElement('div');
     demandaDiv.className = 'demanda mb-3';
 

@@ -23,6 +23,7 @@ async function handleLogin(event) {
 
         if (user && userLogin.password === user.password) {
             localStorage.setItem("id", user.id);
+            localStorage.setItem("userTypeId", user.userTypeId);
             if (user.userTypeId === "1") {
                 console.log("produtor")
                 window.location.href = "produtor/meus-residuos.html";

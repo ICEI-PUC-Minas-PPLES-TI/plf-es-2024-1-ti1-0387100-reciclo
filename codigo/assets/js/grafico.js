@@ -1,11 +1,12 @@
-import { getResiduos } from "../../service/residuos-service.js";
+import {ResidueService} from '../../service/residuos-service.js';
 import { tipoResiduos } from "./utils/tipo-residuos.js";
 
 tipoResiduos
+const residueService = new ResidueService();
 
 // Função assíncrona para obter os resíduos
 const fetchResiduos = async () => {
-   return await getResiduos();
+   return await residueService.getResiduos();
 }
 
 //const typeChart = document.getElementById('typeChart').value;

@@ -1,15 +1,16 @@
 import { alocarColetor, getResiduo } from '../../service/residuos-service.js';
 import { getTipoResiduo } from '../../service/tiposResiduos-service.js';
 import { getDelivery } from '../../service/entrega-service.js';
-import { getUsuario } from '../../service/usuario-service.js';
+import {UserService} from '../../service/usuario-service.js';
 
+const userService = new UserService();
 let coletor = null;
 let demanda = null;
 let tipoResiduo = null;
 let delivery = null;
 
 async function fetchUsuario(id) {
-  const response = await getUsuario(id);
+  const response = await userService.getUser(id);
   coletor = response;
 }
 

@@ -15,6 +15,13 @@
       "cellphone": "31975881152",
       "password": "12345678",
       "userTypeId": 2
+    },
+    {
+      "id": "2f5f",
+      "email": "jpvdo@yahoo.com",
+      "name": "Joao Pedro Vitor de Oliveira",
+      "password": "123",
+      "userTypeId": "1"
     }
   ],
   "userTypes": [

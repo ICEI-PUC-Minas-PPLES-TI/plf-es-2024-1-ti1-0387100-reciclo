@@ -1,10 +1,11 @@
-import {getUsuario, putUsuario} from "../../service/usuario-service.js";
+import {UserService} from "../../service/usuario-service.js";
 
+const userService = new UserService();
 const inputFields = ["name", "email", "password", "cellphone"]
 
 async function setupPageUserProfile() {
     const userId = getQueryParams();
-    const user = await getUsuario(userId);
+    const user = await userService.getUser(userId);
     
     for (let i = 0; i < inputFields.length; i++) {
         changeInputValue(inputFields[i], user[inputFields[i]]);
@@ -47,14 +48,14 @@ function handleEditFields() {
 
 async function handleSaveFields() {
     const userId = getQueryParams();
-    const userData = await getUsuario(userId);
+    const userData = await userService.getUser(userId);
 
     const inputFields = document.querySelectorAll('input');
     inputFields.forEach(function(input) {
         userData[input.id] = input.value;
     });
     
-    await putUsuario(userData);
+    await userService.putUser(userData);
     window.location.reload();
 }
 

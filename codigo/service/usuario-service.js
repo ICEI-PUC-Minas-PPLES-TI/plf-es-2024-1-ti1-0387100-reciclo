@@ -1,58 +1,76 @@
-export const postUsuario = async (usuario) => {
-  const response = await fetch('http://localhost:3000/users', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(usuario),
-  });
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
-  }
-  const data = await response.json();
-  return data;
-}
+export class UserService {
 
-export const getUsuarios = async () => {
-  const response = await fetch('http://localhost:3000/users');
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
+  constructor(){
+    this.urlBase = "http://localhost:3000/users";
   }
-  const usuarios = await response.json();
-  return usuarios;
-}
 
-export const getUsuario = async (id) => {
-  const response = await fetch(`http://localhost:3000/users/${id}`);
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
-  }
-  const usuario = await response.json();
-  return usuario;
-}
+  async postUser(user){
+    console.log(user)
+    const response = await fetch(this.urlBase, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(user),
+    });
 
-export const putUsuario = async (usuario) => {
-  const response = await fetch(`http://localhost:3000/users/${usuario.id}`, {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(usuario),
-  });
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
-  }
-  const data = await response.json();
-  return data;
-}
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
 
-export const deleteUsuario = async (id) => {
-  const response = await fetch(`http://localhost:3000/users/${id}`, {
-    method: 'DELETE',
-  });
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
+    const data = await response.json();
+    return data;
   }
-  const data = await response.json();
-  return data;
+
+  async getUsers() {
+    const response = await fetch(this.urlBase);
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const users = await response.json();
+    return users;
+  }
+
+  async getUser(id) {
+    const response = await fetch(`${this.urlBase}/${id}`);
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    const user = await response.json();
+    return user;
+  }
+
+  async putUser(user) {
+    const response = await fetch(`${this.urlBase}/${user.id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(user),
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    return data;
+  }
+
+  async deleteUser(id) {
+    const response = await fetch(`${this.urlBase}/${id}`, {
+      method: 'DELETE',
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    const data = await response.json();
+    return data;
+  }
 }

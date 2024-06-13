@@ -40,6 +40,7 @@ async function handleAddResidue(event) {
             deliveryId: deliveryCreated.id,
             unity: unity,
             quantity: quantity,
+            description: description
         }
 
         const residueCreated = await residueService.postResiduo(residueData);

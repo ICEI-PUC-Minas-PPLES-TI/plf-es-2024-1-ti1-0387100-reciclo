@@ -6,7 +6,7 @@
       "email": "barriguinha@aluguel.com",
       "cellphone": "31975881150",
       "password": "12345678",
-      "userTypeId": 1
+      "userTypeId": "1"
     },
     {
       "id": "2",
@@ -14,7 +14,7 @@
       "email": "vila@acapulco.com",
       "cellphone": "31975881152",
       "password": "12345678",
-      "userTypeId": 2
+      "userTypeId": "2"
     },
     {
       "id": "2f5f",
@@ -45,74 +45,12 @@
     {
       "id": "1",
       "collectorId": null,
-      "producerId": 1,
-      "residuesTypesId": 3,
-      "deliveryId": 1,
+      "producerId": "1",
+      "residuesTypesId": "3",
+      "deliveryId": "1",
       "unity": "kg",
-      "quantity": 100
-    },
-    {
-      "id": "1",
-      "collectorId": 1,
-      "producerId": 1,
-      "residuesTypesId": 2,
-      "deliveryId": 2,
-      "unity": "kg",
-      "quantity": 50
-    },
-    {
-      "id": "1",
-      "collectorId": 1,
-      "producerId": 1,
-      "residuesTypesId": 1,
-      "deliveryId": 3,
-      "unity": "kg",
-      "quantity": 30
-    },
-    {
-      "id": "1",
-      "collectorId": 1,
-      "producerId": 1,
-      "residuesTypesId": 1,
-      "deliveryId": 4,
-      "unity": "kg",
-      "quantity": 3
-    },
-    {
-      "id": "1",
-      "collectorId": 1,
-      "producerId": 1,
-      "residuesTypesId": 4,
-      "deliveryId": 1,
-      "unity": "kg",
-      "quantity": 100
-    },
-    {
-      "id": "c72d",
-      "collectorId": null,
-      "producerId": "7",
-      "residuesTypeId": "3",
-      "deliveryId": "0672",
-      "unity": "kg",
-      "quantity": "10"
-    },
-    {
-      "id": "dd2c",
-      "collectorId": null,
-      "producerId": "2f5f",
-      "residuesTypeId": "2",
-      "deliveryId": "245c",
-      "unity": "kg",
-      "quantity": "12"
-    },
-    {
-      "id": "c223",
-      "collectorId": null,
-      "producerId": "2f5f",
-      "residuesTypeId": "2",
-      "deliveryId": "a3f9",
-      "unity": "kg",
-      "quantity": "123"
+      "quantity": 100,
+      "description": "Descricao"
     }
   ],
   "residuesTypes": [
@@ -139,55 +77,6 @@
       "address": "Rua Alagoas, 1024, Savassi, Belo Horizonte",
       "scheduleDate": "24/07/2024",
       "securityCode": 9999,
-      "concluded": false
-    },
-    {
-      "id": "2",
-      "address": "Av. dos Engenheiros, 231 - Castelo, Belo Horizonte",
-      "scheduleDate": "24/07/2024",
-      "securityCode": 9999,
-      "concluded": false
-    },
-    {
-      "id": "3",
-      "address": "R. Pernambuco, 781 - Savassi, Belo Horizonte",
-      "scheduleDate": "24/07/2024",
-      "securityCode": 9999,
-      "concluded": false
-    },
-    {
-      "id": "4",
-      "address": "R. Antônio de Albuquerque, 369 - Savassi, Belo Horizonte - MG",
-      "scheduleDate": "24/07/2024",
-      "securityCode": 9999,
-      "concluded": false
-    },
-    {
-      "id": "5",
-      "address": "Av. Cristóvão Colombo, 470 - Funcionários, Belo Horizonte - MG",
-      "scheduleDate": "24/07/2024",
-      "securityCode": 9999,
-      "concluded": false
-    },
-    {
-      "id": "0672",
-      "address": "Rua Teste",
-      "scheduleDate": "2024-06-27",
-      "securityCode": 8561,
-      "concluded": false
-    },
-    {
-      "id": "245c",
-      "address": "teste",
-      "scheduleDate": "2024-06-20",
-      "securityCode": 6879,
-      "concluded": false
-    },
-    {
-      "id": "a3f9",
-      "address": "a",
-      "scheduleDate": "2024-05-31",
-      "securityCode": 9522,
       "concluded": false
     }
   ],

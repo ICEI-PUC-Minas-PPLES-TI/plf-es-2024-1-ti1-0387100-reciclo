@@ -1,0 +1,140 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Seu Barriga",
+      "email": "barriguinha@aluguel.com",
+      "cellphone": "31975881150",
+      "password": "12345678",
+      "userTypeId": 1
+    },
+    {
+      "id": "2",
+      "name": "Madruguinha",
+      "email": "vila@acapulco.com",
+      "cellphone": "31975881152",
+      "password": "12345678",
+      "userTypeId": 2
+    }
+  ],
+  "userTypes": [
+    {
+      "id": "1",
+      "name": "Produtor"
+    },
+    {
+      "id": "2",
+      "name": "Coletor"
+    }
+  ],
+  "residues": [
+    {
+      "id": "1",
+      "collectorId": null,
+      "producerId": 1,
+      "residuesTypesId": 3,
+      "deliveryId": 1,
+      "unity": "kg",
+      "quantity": 100
+    },
+    {
+      "id": "1",
+      "collectorId": null,
+      "producerId": 1,
+      "residuesTypesId": 2,
+      "deliveryId": 2,
+      "unity": "kg",
+      "quantity": 50
+    },
+    {
+      "id": "1",
+      "collectorId": null,
+      "producerId": 1,
+      "residuesTypesId": 1,
+      "deliveryId": 3,
+      "unity": "kg",
+      "quantity": 30
+    },
+    {
+      "id": "1",
+      "collectorId": null,
+      "producerId": 1,
+      "residuesTypesId": 1,
+      "deliveryId": 4,
+      "unity": "kg",
+      "quantity": 3
+    },
+    {
+      "id": "1",
+      "collectorId": null,
+      "producerId": 1,
+      "residuesTypesId": 4,
+      "deliveryId": 1,
+      "unity": "kg",
+      "quantity": 100
+    }
+  ],
+  "residuesTypes": [
+    {
+      "id": "1",
+      "name": "Vidro"
+    },
+    {
+      "id": "2",
+      "name": "Plastico"
+    },
+    {
+      "id": "3",
+      "name": "Papel"
+    },
+    {
+      "id": "4",
+      "name": "Metal"
+    }
+  ],
+  "deliveries": [
+    {
+      "id": "1",
+      "address": "Rua Alagoas, 1024, Savassi, Belo Horizonte",
+      "scheduleDate": "24/07/2024",
+      "securityCode": 9999,
+      "concluded": false
+    },
+    {
+      "id": "2",
+      "address": "Av. dos Engenheiros, 231 - Castelo, Belo Horizonte",
+      "scheduleDate": "24/07/2024",
+      "securityCode": 9999,
+      "concluded": false
+    },
+    {
+      "id": "3",
+      "address": "R. Pernambuco, 781 - Savassi, Belo Horizonte",
+      "scheduleDate": "24/07/2024",
+      "securityCode": 9999,
+      "concluded": false
+    },
+    {
+      "id": "4",
+      "address": "R. Antônio de Albuquerque, 369 - Savassi, Belo Horizonte - MG",
+      "scheduleDate": "24/07/2024",
+      "securityCode": 9999,
+      "concluded": false
+    },
+    {
+      "id": "5",
+      "address": "Av. Cristóvão Colombo, 470 - Funcionários, Belo Horizonte - MG",
+      "scheduleDate": "24/07/2024",
+      "securityCode": 9999,
+      "concluded": false
+    }
+  ],
+  "ratings": [
+    {
+      "id": "1",
+      "collectorId": 2,
+      "producerId": 1,
+      "rating": 5
+    }
+  ]
+}

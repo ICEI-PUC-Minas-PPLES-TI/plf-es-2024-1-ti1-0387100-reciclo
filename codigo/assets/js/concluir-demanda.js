@@ -157,4 +157,3 @@ btnSolicita.addEventListener('click', function () {
     divSolicitar.classList.remove('solicitation');
 })
 
-

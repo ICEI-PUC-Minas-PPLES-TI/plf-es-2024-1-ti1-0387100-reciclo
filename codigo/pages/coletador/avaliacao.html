@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../assets/css/coletador/concluir-demanda.css">
-    <link rel="stylesheet" href="../../assets/css/coletador/modal-concluir-demanda.css">
-    <title>Concluir Demanda</title>
-</head>
-
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Avaliação</title>
+        <link rel="stylesheet" href="../../assets/css/coletador/concluir-demanda.css">
+        <link rel="stylesheet" href="../../assets/css/coletador/modal-concluir-demanda.css">
+    </head>
 <body>
     <header>
 
@@ -42,18 +40,18 @@
         <div class="btnSolicitarColeta">
             <button id="btnSolicitar">+ Solicitar Coleta</button>
         </div>
-        <div class="divModal" id="divModal">
+        <div class="divModal" id="divModal">    
             <div id="modalInput" class="modal">
                 <div class="textModal">
-                    <h2>Digite o código</h2>
-                    <p>Código fornecido pelo produtor do insumo<br><strong>(Código teste: 1234)</strong></p>
+                    <h2>Avalie este usuário</h2>
                 </div>
-                <div id="inputCode">
-                    <input type="number" class="input1" id="inpt1" maxlength="1">
-                    <input type="number" class="input2" id="inpt2" maxlength="1">
-                    <input type="number" class="input3" id="inpt3" maxlength="1">
-                    <input type="number" class="input4" id="inpt4" maxlength="1">
-                </div>
+                <ul class="avaliacao">  
+                    <li class="star-icon ativo" data-avaliacao="1"></li>
+                    <li class="star-icon" data-avaliacao="2"></li>
+                    <li class="star-icon" data-avaliacao="3"></li>
+                    <li class="star-icon" data-avaliacao="4"></li>
+                    <li class="star-icon" data-avaliacao="5"></li>
+                  </ul>
                 <button id="btnConfirmarCodigo" type="submit">Confirmar</button>
             </div>
 
@@ -65,8 +63,7 @@
         </div>
 
     </main>
+    <script src="../../assets/js/avaliacao.js"></script>
+    
 </body>
-
-<script src="../../assets/js/concluir-demanda.js"></script>
-
 </html>

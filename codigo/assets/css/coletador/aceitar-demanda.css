@@ -5,21 +5,29 @@
     background-color: #FFFFFF;
 }
 
+p {
+    font-size: 16px;
+    line-height: 19.36px;
+    color: #6C757D;
+    font-weight: 400;
+}
+
 body {
     align-items: center;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 section {
-    align-items: center;
     border: 1px solid #DEE2E6;
-    border-radius: 12px;
+    border-radius: 12px 12px 0 0;
     display: flex;
     height: 481px;
     flex-direction: column;
     width: 366px;
 }
+
 
 h1 {
     color: #212529;
@@ -27,38 +35,43 @@ h1 {
     height: 34px;
     line-height: 33.89px;
     font-weight: 600;
-    width: 203px;
+    margin: 24px 0 12px 0;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24.2px;
+    margin: 16px 0;
 }
 
 img {
-    border-radius: 12px, 12px, 0px, 0px;
-    height: 220px;
-    width: 366px;
+    border-radius: 12px 12px 0 0;
+    max-height: 220px;
+    width: 100%;
+    /* width: 366px; */
 }
 
 #caixa-descricao {
-    gap: 24px;
     height: 160px;
     padding: 24px;
     width: 366px;
+    border: 1px solid #DEE2E6;
 
 }
 
 .outras-infos {
-    height: 151px;
     width: 364px;
 }
 
 .outras-infos ul {
-    gap: 8px;
-    height: 51px;
     list-style-type: none;
     width: 364px;
 }
 
 li {
     width: 296;
-    height: 19px;
+    height: 100%;
     font-size: 16px;
     line-height: 19.36px;
     color: #6C757D;
@@ -68,7 +81,7 @@ li {
 }
 
 button {
-    background-color: #007BFF;
+    background-color: #1D4F91;
     border: none;
     border-radius: 12px;
     color: #FFFFFF;
@@ -77,3 +90,13 @@ button {
     width: 364px;
     margin-top: 24px;
 }
+
+/* button {
+    color: #1D4F91;
+    width: 165px;
+    height: 38px;
+    border-radius: 6px;
+    border: 1px solid #1D4F91;
+    padding: 10px, 16px, 10px, 16px;
+    margin: 8px;
+} */

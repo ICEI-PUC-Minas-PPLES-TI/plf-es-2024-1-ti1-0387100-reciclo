@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+h1{
+    margin: 16px 0;
+}
+
+
+main{
+    margin: 0 36px;
+
+}
+
+.lista-demanda{
+    display: flex;
+    flex-direction: column;
+}
+
+.demanda{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    padding-top: 4px !important;
+    padding: 0 12px;
+}
+
+
+#adicionar{
+    background-color: #1D4F91;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    cursor: pointer;
+}

@@ -1,0 +1,19 @@
+{
+    "usuarios":[
+        {
+        "id": "4",
+        "nome": "Seu Madruga",
+        "email": "madruga@vila.com.br",
+        "senha": "papel",
+        "papel": "coletador",
+        "ocupado": false
+        },
+        {
+        "id": "5",
+        "nome": "Chapolin Colorado",
+        "email": "vermelhinho@colorado.com.br",
+        "senha": "marreta",
+        "papel": "produtor"
+        }
+    ]
+}

@@ -1,6 +1,6 @@
 let selectedItemValues = []; // Array to store selected item values
 
-fetch('listaConcluida.json')
+fetch('../../db/listaConcluida.json')
   .then(response => response.json())
   .then(jsonData => {
 

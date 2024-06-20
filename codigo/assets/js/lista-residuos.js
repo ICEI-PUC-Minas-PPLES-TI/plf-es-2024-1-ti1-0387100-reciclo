@@ -7,6 +7,7 @@ const deliveryService = new DeliveryService();
 const statusDelivery = ["PENDENTE", "AGUARDANDO COLETA", "CONCLUIDO"]
 
 async function setupPageListResidues() {
+    if (!isUserProducer()) throw new Error("Voce não é um Produtor de Residuos");
     const residueList = await residueService.getResidueByProducerId(getUserId());
 
     if (residueList.length > 0) {

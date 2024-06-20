@@ -4,7 +4,7 @@ const userService = new UserService();
 const inputFields = ["name", "email", "password", "cellphone"]
 
 async function setupPageUserProfile() {
-    const userId = getQueryParams();
+    const userId = getUserId();
     const user = await userService.getUser(userId);
     
     for (let i = 0; i < inputFields.length; i++) {
@@ -16,11 +16,9 @@ async function setupPageUserProfile() {
     document.getElementById('cancel-button').addEventListener('click', handleCancelFields);
 }
 
-function getQueryParams() {
-    const search = window.location.search;
-    const urlParams = new URLSearchParams(search);
-    return urlParams.get('id');
-} 
+function getUserId(){
+    return localStorage.getItem("id");
+}
 
 function changeInputValue(inputId, newValue) {
     const inputElement = document.getElementById(inputId);
@@ -47,7 +45,7 @@ function handleEditFields() {
 }
 
 async function handleSaveFields() {
-    const userId = getQueryParams();
+    const userId = getUserId();
     const userData = await userService.getUser(userId);
 
     const inputFields = document.querySelectorAll('input');

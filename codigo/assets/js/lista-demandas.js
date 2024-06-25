@@ -105,7 +105,7 @@ function createCardResidueComponent(cardData) {
     button.type = 'button';
     button.style.all = 'unset';
     button.addEventListener('click', function() {
-    window.location.href =  `aceitar-demanda.html?id=${cardData.residueId}`;
+    window.location.href =  `visualizar-coleta.html?id=${cardData.residueId}`;
     });
     var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');

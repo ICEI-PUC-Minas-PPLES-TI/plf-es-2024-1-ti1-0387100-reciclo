@@ -30,6 +30,20 @@
       "name": "Joao Pedro Vitor de Oliveira",
       "password": "123",
       "userTypeId": "2"
+    },
+    {
+      "id": "717e",
+      "email": "joao.produtor@teste.com",
+      "name": "joao",
+      "password": "123",
+      "userTypeId": "1"
+    },
+    {
+      "id": "3325",
+      "email": "pedro.coletor@teste.com",
+      "name": "pedro",
+      "password": "123",
+      "userTypeId": "2"
     }
   ],
   "userTypes": [
@@ -72,6 +86,26 @@
       "unity": "kg",
       "quantity": "50",
       "description": "as"
+    },
+    {
+      "id": "5509",
+      "collectorId": "3325",
+      "producerId": "717e",
+      "residuesTypesId": "4",
+      "deliveryId": "85f5",
+      "unity": "kg",
+      "quantity": "100",
+      "description": "Material separado"
+    },
+    {
+      "id": "42d0",
+      "collectorId": "3325",
+      "producerId": "717e",
+      "residuesTypesId": "1",
+      "deliveryId": "86b3",
+      "unity": "kg",
+      "quantity": "30",
+      "description": "Garrafas de ks"
     }
   ],
   "requests": [
@@ -104,6 +138,42 @@
       "collectorId": "3b0e",
       "residue": "bcc8",
       "accept": null
+    },
+    {
+      "id": "5632",
+      "collectorId": "3325",
+      "residue": "5509",
+      "accept": true
+    },
+    {
+      "id": "1f5b",
+      "collectorId": "3325",
+      "residue": "42d0",
+      "accept": false
+    },
+    {
+      "id": "618e",
+      "collectorId": "3325",
+      "residue": "42d0",
+      "accept": true
+    },
+    {
+      "id": "c4b3",
+      "collectorId": "3325",
+      "residue": "42d0",
+      "accept": true
+    },
+    {
+      "id": "65b5",
+      "collectorId": "3325",
+      "residue": "42d0",
+      "accept": true
+    },
+    {
+      "id": "2756",
+      "collectorId": "3325",
+      "residue": "42d0",
+      "accept": true
     }
   ],
   "residuesTypes": [
@@ -145,6 +215,20 @@
       "scheduleDate": "2024-06-28",
       "securityCode": 8063,
       "concluded": false
+    },
+    {
+      "id": "85f5",
+      "address": "Rua Alagoas, 904, Savassi",
+      "scheduleDate": "2024-06-28",
+      "securityCode": 9848,
+      "concluded": true
+    },
+    {
+      "id": "86b3",
+      "address": "Rua Sao Paulo, 109, Centro",
+      "scheduleDate": "2024-06-26",
+      "securityCode": 2961,
+      "concluded": true
     }
   ],
   "ratings": [

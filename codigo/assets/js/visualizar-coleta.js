@@ -17,6 +17,9 @@ async function setupPagetResidue() {
     const cardResidueData = createCardResidueData(residue, deliveryResidue)
     createCardResidueComponent(cardResidueData)
 
+    const cancelarDemanda = document.querySelector("#btnCancelar");
+    cancelarDemanda.addEventListener("click", ()=> cancelCollect(residue));
+
     await setStatus(residue, deliveryResidue)
     buildComponentByStatus()
 }
@@ -121,4 +124,10 @@ function buildComponentByStatus(){
             modalConcluido.classList.add("d-flex");
             break;
     }
+}
+
+async function cancelCollect(residue) {
+    console.log("cancelar") 
+    residue.collectorId = null;
+    await residueService.putResiduo(residue);
 }

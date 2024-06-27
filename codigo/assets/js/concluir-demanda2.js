@@ -10,7 +10,6 @@ const modal = document.querySelector(".divModal");
 const modalInput = document.querySelector(".modal1")
 
 concluirDemanda.addEventListener("click", function () {
-    console.log("teste")
     modal.classList.add('open')
     modalInput.classList.add('open')
 

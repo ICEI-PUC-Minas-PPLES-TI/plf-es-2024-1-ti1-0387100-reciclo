@@ -6,6 +6,12 @@ const inputFields = ["name", "email", "password", "cellphone"]
 async function setupPageUserProfile() {
     const userId = getUserId();
     const user = await userService.getUser(userId);
+
+    const userTypeId = getUserTypeId();
+
+    if (userTypeId === "2") {
+        updateToolBarForTypeUser()
+    }
     
     for (let i = 0; i < inputFields.length; i++) {
         changeInputValue(inputFields[i], user[inputFields[i]]);
@@ -18,6 +24,10 @@ async function setupPageUserProfile() {
 
 function getUserId(){
     return localStorage.getItem("id");
+}
+
+function getUserTypeId(){
+    return localStorage.getItem("userTypeId");
 }
 
 function changeInputValue(inputId, newValue) {
@@ -59,6 +69,17 @@ async function handleSaveFields() {
 
 function handleCancelFields(){
     window.location.reload();
+}
+
+function updateToolBarForTypeUser() {
+    const linkElement1 = document.getElementById("link_1");
+    const linkElement2 = document.getElementById("link_2");
+
+    linkElement1.href = './coletador/lista-demandas.html';
+    linkElement2.href = './coletador/minhas-demandas.html';
+
+    linkElement1.textContent = 'Coletas Disponíveis';
+    linkElement2.textContent = 'Minhas Coletas';
 }
 
 window.addEventListener("load", setupPageUserProfile);

@@ -98,6 +98,12 @@
       "collectorId": "3b0e",
       "residue": "c0ff",
       "accept": true
+    },
+    {
+      "id": "eae2",
+      "collectorId": "3b0e",
+      "residue": "bcc8",
+      "accept": null
     }
   ],
   "residuesTypes": [

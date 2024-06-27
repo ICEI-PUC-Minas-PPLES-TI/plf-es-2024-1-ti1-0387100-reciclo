@@ -14,14 +14,19 @@ let securityCode = 9999;
 async function setupPagetResidue() {
     const residue = await residueService.getResiduo(getResidueId());
     const deliveryResidue  = await deliveryService.getDelivery(residue.deliveryId);
+    
     securityCode = deliveryResidue.securityCode;
     const cardResidueData = createCardResidueData(residue, deliveryResidue)
     createCardResidueComponent(cardResidueData)
-    
-    if (residue.collectorId) {
+    console.log(deliveryResidue)
+    if (residue.collectorId && !deliveryResidue.concluded){
         createCollectorCodeComponent()
         document.getElementById('button_cancel').addEventListener('click', ()=> handleCancelCollect());
-    } else {
+    } else if (residue.collectorId && deliveryResidue.concluded){
+        console.log("teste")
+        createConcludedComponent()
+    } 
+    else {
         await updateRequests();
     }
 }
@@ -145,4 +150,12 @@ function requestDTO(requestData, bool) {
     request.residue = getResidueId();
     request.accept = bool;
     return request
+}
+
+function createConcludedComponent() {
+    let elementCardStatus =document.getElementById("card-status");
+    elementCardStatus.classList.remove("d-none");
+    let elementCodigoColeta =document.getElementById("concluido-coleta");
+    elementCodigoColeta.classList.remove("d-none");
+    elementCodigoColeta.classList.add("d-flex");
 }

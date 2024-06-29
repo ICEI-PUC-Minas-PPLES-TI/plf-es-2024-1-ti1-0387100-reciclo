@@ -14,11 +14,8 @@ const buttonInput = document.querySelector("#adicionar");
 function carregarDadosFormulario(){
 
     const id = JSON.parse(localStorage.getItem("id"));
-    console.log(id);
     demandas = JSON.parse(localStorage.getItem("demandas")) || [];
-    console.log(demandas);
     demanda = demandas.find((d) => { return d.id == id; });
-    console.log(demanda);
 
 
     pesoInput.value = demanda.peso;

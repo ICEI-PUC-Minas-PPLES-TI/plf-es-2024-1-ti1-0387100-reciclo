@@ -66,6 +66,7 @@ buttonRequest.addEventListener("click", handleRequestCollect)
 
 async function handleRequestCollect() {
     await requestService.postRequest(requestDTO());
+    window.location.reload();
 }
 
 function requestDTO() {
@@ -84,7 +85,7 @@ async function isAlredyRequest() {
     const allRequests = await requestService.getRequests();
 
     for (const req of allRequests) {
-        if (req.collectorId === getUserId() && req.accept === null) {
+        if (req.collectorId === getUserId() && req.residue === getResidueId() && req.accept === null) {
             return statusCollect[1];
         }
     }
@@ -127,7 +128,6 @@ function buildComponentByStatus(){
 }
 
 async function cancelCollect(residue) {
-    console.log("cancelar") 
     residue.collectorId = null;
     await residueService.putResiduo(residue);
 }

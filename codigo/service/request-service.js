@@ -1,8 +1,8 @@
 export class RequestService {
 
   constructor(){
-    this.urlBase = "http://localhost:3000/requests";
-    // this.urlBase = "https://json-server-reciclo.vercel.app/requests";
+    // this.urlBase = "http://localhost:3000/requests";
+    this.urlBase = "https://jsonserverreciclo.onrender.com/requests";
   }
 
   async postRequest(request){

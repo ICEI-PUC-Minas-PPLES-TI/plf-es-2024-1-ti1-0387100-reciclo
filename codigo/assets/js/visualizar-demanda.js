@@ -14,16 +14,18 @@ let securityCode = 9999;
 async function setupPagetResidue() {
     const residue = await residueService.getResiduo(getResidueId());
     const deliveryResidue  = await deliveryService.getDelivery(residue.deliveryId);
+
+    const elementExcludeColect = document.getElementById("exclude_container");
+    elementExcludeColect.addEventListener("click", ()=> excludeResidue(residue));
     
     securityCode = deliveryResidue.securityCode;
     const cardResidueData = createCardResidueData(residue, deliveryResidue)
     createCardResidueComponent(cardResidueData)
-    console.log(deliveryResidue)
+    
     if (residue.collectorId && !deliveryResidue.concluded){
         createCollectorCodeComponent()
         document.getElementById('button_cancel').addEventListener('click', ()=> handleCancelCollect());
     } else if (residue.collectorId && deliveryResidue.concluded){
-        console.log("teste")
         createConcludedComponent()
     } 
     else {
@@ -34,6 +36,7 @@ async function setupPagetResidue() {
 async function updateRequests() {
     const elementCardStatus = document.getElementById("card-status");
     const elementPedidoColeta = document.getElementById("pedido-coleta");
+    const elementExcludeColect = document.getElementById("exclude_container");
     const requests  = await requestService.getRequestsByResidueId(getResidueId());
     const requestsPending = requests.filter(request => request.accept === null);
     if (requestsPending.length > 0) {
@@ -51,6 +54,7 @@ async function updateRequests() {
         document.getElementById('button_cancel').addEventListener('click', ()=> handleCancelCollect());
     } else {
         elementCardStatus.classList.add("d-none")
+        elementExcludeColect.classList.remove("d-none")
     }
 }
 
@@ -95,7 +99,6 @@ function createCardResidueComponent(cardData) {
     address.innerText = cardData.address;
     const date= document.getElementById("residue-date");
     date.innerText = formatDate(cardData.date);
-    
 }
     
 function createCardRequestComponent(requestData){
@@ -158,4 +161,11 @@ function createConcludedComponent() {
     let elementCodigoColeta =document.getElementById("concluido-coleta");
     elementCodigoColeta.classList.remove("d-none");
     elementCodigoColeta.classList.add("d-flex");
+}
+
+
+async function excludeResidue(residue){
+    await residueService.deleteResiduo(residue.id);
+    await deliveryService.deleteDelivery(residue.deliveryId);
+    window.location.href = "meus-residuos.html"
 }

@@ -1,7 +1,8 @@
 export class DeliveryService {
 
   constructor(){
-    this.urlBase = "http://localhost:3000/deliveries";
+    // this.urlBase = "http://localhost:3000/deliveries";
+    this.urlBase = "https://jsonserverreciclo.onrender.com/deliveries";
   }
 
   async postDelivery(delivery) {

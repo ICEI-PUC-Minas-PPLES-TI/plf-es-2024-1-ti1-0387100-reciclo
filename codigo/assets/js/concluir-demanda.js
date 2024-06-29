@@ -11,8 +11,6 @@ fetch(apiData)
             const horarioDemanda = document.querySelector('.horarioData');
             const imagemDemanda = document.getElementById('imagemDemanda');
 
-            console.log(imagemDemanda)
-
             imagemDemanda.src = `${dadosDemanda.image}`
             nomeProdutorDemanda.innerHTML = `${dadosDemanda.produtor.nome}`;
             tipoResiduo.innerHTML = `${dadosDemanda.tipoResiduo} - ${dadosDemanda.quantidade}`

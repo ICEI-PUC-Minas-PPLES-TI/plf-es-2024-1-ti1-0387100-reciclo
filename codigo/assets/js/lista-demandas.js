@@ -13,7 +13,6 @@ async function setupPageListDemands() {
   selectElement.addEventListener('change', (event) => {
     const selectedValue = event.target.value;
     tipoSelecionado = selectedValue;
-    console.log('Selected material type:', tipoSelecionado);
     let residueList = residueListTotal.filter(residuo => !residuo.collectorId);
     const list_demands = document.getElementById('list_demands');
     list_demands.innerHTML = '';

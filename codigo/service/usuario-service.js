@@ -1,7 +1,8 @@
 export class UserService {
 
   constructor(){
-    this.urlBase = "http://localhost:3000/users";
+    // this.urlBase = "http://localhost:3000/users";
+    this.urlBase = "https://jsonserverreciclo.onrender.com/users";
   }
 
   async postUser(user){

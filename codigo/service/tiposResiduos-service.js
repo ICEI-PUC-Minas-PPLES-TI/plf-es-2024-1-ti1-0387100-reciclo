@@ -1,7 +1,8 @@
 export class ResidueTypeService {
 
   constructor(){
-    this.urlBase = "http://localhost:3000/residuesTypes";
+    // this.urlBase = "http://localhost:3000/residuesTypes";
+    this.urlBase = "https://jsonserverreciclo.onrender.com/residuesTypes";
   }
 
   async getTiposResiduos() {

@@ -65,7 +65,6 @@ function comparePassword(pass, confirmPass) {
 
 async function verifyEmail(email) {
     const existUserEmail = await userService.getUserByEmail(email);
-    console.log(existUserEmail.length);
     if (existUserEmail.length > 0) throw new Error("Email já cadastrado");
 }
 

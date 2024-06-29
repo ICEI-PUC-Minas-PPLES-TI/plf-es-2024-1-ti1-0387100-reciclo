@@ -1,7 +1,8 @@
 export class RatingService {
 
   constructor(){
-    this.urlBase = "http://localhost:3000/ratings";
+    // this.urlBase = "http://localhost:3000/ratings";
+    this.urlBase = "https://jsonserverreciclo.onrender.com/ratings";
   }
 
   async postRating(rating){

@@ -1,5 +1,5 @@
 cff-version: 1.0.1
-message: Please cite this software using these metadata.
+message: "Please cite this software using these metadata."
 title: "ReCiclo"
 authors:
   - family-names: "Vitor de Oliveira"
@@ -29,7 +29,7 @@ version: 1.0.0
 date-released: 2024-07-02
 =======
 cff-version: 1.0.1
-message: Please cite this software using these metadata.
+message: "Please cite this software using these metadata."
 title: "ReCiclo"
 authors:
  - family-names: "Vitor de Oliveira"

@@ -27,33 +27,3 @@ repository-code: "https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2024-1-ti1-0
 license: CC-BY-4.0
 version: 1.0.0
 date-released: 2024-07-02
-=======
-cff-version: 1.0.1
-message: "Please cite this software using these metadata."
-title: "plf-es-2024-1-ti1-0387100-reciclo"
-authors:
- - family-names: "Vitor de Oliveira"
-    given-names: "João Pedro"
-  - family-names: "Coutinho Corrêa"
-    given-names: "Júlia Maria"
-  - family-names: "Andrade Machado"
-    given-names: "Murilo"
-  - family-names: "Chaves Silva"
-    given-names: "Otávio"
-  - family-names: "Barbosa Montandon de Araújo"
-    given-names: "Pedro Henrique"
-  - name-suffix: "Professor"
-    affiliation: "PUC Minas"
-    family-names: "Silva Tavares"
-    given-names: "Cleiton"
-  - name-suffix: "Professor"
-    affiliation: "PUC Minas"
-    family-names: "Vieira Carneiro"
-    given-names: "Rommel"
-keywords:
-  - Reciclagem
-  - Coleta seletiva
-repository-code: "https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2024-1-ti1-0387100-reciclo"
-license: CC-BY-4.0
-version: 1.0.0
-date-released: 2024-07-02

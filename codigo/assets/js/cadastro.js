@@ -24,6 +24,7 @@ async function handleRegister(event) {
         const userData = {
             email: email,
             name: name,
+            cellphone: cellphone,
             password: password,
             userTypeId: radioButtonValue
         }

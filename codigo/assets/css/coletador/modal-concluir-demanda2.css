@@ -119,7 +119,7 @@ dialog::backdrop {
 }
 
 .avaliacao .star-icon{
-    font-size: 200%;
+    font-size: 300%;
     
 }
 .star-icon{
@@ -129,19 +129,22 @@ dialog::backdrop {
 
 .star-icon::before{
     content: "\2605";
-  }
-  .star-icon.ativo ~ .star-icon::before{
-    content: "\2606";
-  }
-  .avaliacao:hover .star-icon::before{
-    content: "\2605";
-  }
-  .star-icon:hover ~ .star-icon::before{
-    content: "\2606";
-  }
+}
 
-  .avaliacao{
+.star-icon.ativo ~ .star-icon::before{
+    content: "\2606";
+}
+
+.avaliacao:hover .star-icon::before{
+    content: "\2605";
+}
+
+.star-icon:hover ~ .star-icon::before{
+    content: "\2606";
+}
+
+.avaliacao{
     list-style-type: none;
     display: flex;
-    margin-bottom: 0;
-  }
+    padding-inline-start: 0px;
+}

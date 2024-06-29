@@ -1,17 +1,28 @@
-export const getTiposResiduos = async () => {
-  const response = await fetch('http://localhost:3000/residuesTypes');
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
-  }
-  const tiposResiduos = await response.json();
-  return tiposResiduos;
-}
+export class ResidueTypeService {
 
-export const getTipoResiduo = async (id) => {
-  const response = await fetch(`http://localhost:3000/residuesTypes/${id}`);
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
+  constructor(){
+    this.urlBase = "http://localhost:3000/residuesTypes";
   }
-  const tiposResiduos = await response.json();
-  return tiposResiduos;
+
+  async getTiposResiduos() {
+    const response = await fetch(this.urlBase);
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const tiposResiduos = await response.json();
+    return tiposResiduos;
+  }
+
+  async getTipoResiduo(id){
+  const response = await fetch(`${this.urlBase}/${id}`);
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const tiposResiduos = await response.json();
+    return tiposResiduos;
+  }
 }

@@ -20,6 +20,7 @@ async function setupPageUserProfile() {
     document.getElementById('edit-button').addEventListener('click', handleEditFields);
     document.getElementById('save-button').addEventListener('click', handleSaveFields);
     document.getElementById('cancel-button').addEventListener('click', handleCancelFields);
+    document.getElementById("logout-button").addEventListener('click', handleLogout);
 }
 
 function getUserId(){
@@ -36,6 +37,7 @@ function changeInputValue(inputId, newValue) {
 }
 
 function handleEditFields() {
+    viewButtonLogout()
     const inputFields = document.querySelectorAll('input');
     inputFields.forEach((input) => {
         input.classList.remove('form-control-plaintext');
@@ -80,6 +82,20 @@ function updateToolBarForTypeUser() {
 
     linkElement1.textContent = 'Coletas Disponíveis';
     linkElement2.textContent = 'Minhas Coletas';
+}
+
+function viewButtonLogout(){
+    const buttonLogout = document.getElementById("logout-button")
+    if (buttonLogout.classList.contains("d-none")) {
+        buttonLogout.classList.remove("d-none");
+    } else {
+        buttonLogout.classList.add("d-none");
+    }
+}
+
+function handleLogout() {
+    localStorage.removeItem("id");
+    window.location.href = "index.html";
 }
 
 window.addEventListener("load", setupPageUserProfile);

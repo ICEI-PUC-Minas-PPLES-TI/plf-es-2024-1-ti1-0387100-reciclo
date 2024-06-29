@@ -32,7 +32,7 @@ const countResiduos = (residuos, type) => {
 const renderPieChart = async (type = 0) => {
     try {
         const residuos = await fetchResiduos();
-        const filteredResidues = residuos.filter(residuo => residuo.collectorId === 1);
+        const filteredResidues = residuos.filter(residuo => residuo.collectorId === getUserId());
         const contagemResiduos = countResiduos(filteredResidues, type);
 
         const labels = Object.keys(contagemResiduos).map(key => tipoResiduos[key]);
@@ -88,6 +88,11 @@ selectTypeChart.addEventListener('change', (event) => {
     const typeChart = parseInt(event.target.value); // Converte para número inteiro
     renderPieChart(typeChart);
 });
+
+function getUserId(){
+    return localStorage.getItem("id");
+}
+
 
 // Chamada inicial para renderizar o gráfico
 renderPieChart();

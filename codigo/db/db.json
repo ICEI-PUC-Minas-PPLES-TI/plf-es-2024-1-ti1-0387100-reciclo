@@ -29,7 +29,8 @@
       "email": "jpvdo2@yahoo.com",
       "name": "Joao Pedro Vitor de Oliveira",
       "password": "123",
-      "userTypeId": "2"
+      "userTypeId": "2",
+      "cellphone": "undefined"
     },
     {
       "id": "717e",
@@ -42,6 +43,21 @@
       "id": "3325",
       "email": "pedro.coletor@teste.com",
       "name": "pedro",
+      "password": "123",
+      "userTypeId": "2"
+    },
+    {
+      "id": "02f7",
+      "email": "j@teste.com",
+      "name": "fulano",
+      "password": "123",
+      "userTypeId": "1"
+    },
+    {
+      "id": "e169",
+      "email": "teste@a.com",
+      "name": "teste",
+      "cellphone": "31975881199",
       "password": "123",
       "userTypeId": "2"
     }
@@ -79,7 +95,7 @@
     },
     {
       "id": "bcc8",
-      "collectorId": null,
+      "collectorId": "3b0e",
       "producerId": "2f5f",
       "residuesTypesId": "2",
       "deliveryId": "5acd",
@@ -106,6 +122,26 @@
       "unity": "kg",
       "quantity": "30",
       "description": "Garrafas de ks"
+    },
+    {
+      "id": "d74c",
+      "collectorId": "3b0e",
+      "producerId": "2f5f",
+      "residuesTypesId": "2",
+      "deliveryId": "417a",
+      "unity": "kg",
+      "quantity": "10",
+      "description": "asd"
+    },
+    {
+      "id": "95c1",
+      "collectorId": null,
+      "producerId": "2f5f",
+      "residuesTypesId": "1",
+      "deliveryId": "aada",
+      "unity": "KG",
+      "quantity": "12",
+      "description": "SDF"
     }
   ],
   "requests": [
@@ -137,7 +173,7 @@
       "id": "eae2",
       "collectorId": "3b0e",
       "residue": "bcc8",
-      "accept": null
+      "accept": true
     },
     {
       "id": "5632",
@@ -173,6 +209,30 @@
       "id": "2756",
       "collectorId": "3325",
       "residue": "42d0",
+      "accept": true
+    },
+    {
+      "id": "6a98",
+      "collectorId": "3b0e",
+      "residue": "d74c",
+      "accept": true
+    },
+    {
+      "id": "4e5b",
+      "collectorId": "3b0e",
+      "residue": "d74c",
+      "accept": true
+    },
+    {
+      "id": "1f76",
+      "collectorId": "3b0e",
+      "residue": "95c1",
+      "accept": false
+    },
+    {
+      "id": "61f1",
+      "collectorId": "3b0e",
+      "residue": "d74c",
       "accept": true
     }
   ],
@@ -214,7 +274,7 @@
       "address": "Teste",
       "scheduleDate": "2024-06-28",
       "securityCode": 8063,
-      "concluded": false
+      "concluded": true
     },
     {
       "id": "85f5",
@@ -229,6 +289,20 @@
       "scheduleDate": "2024-06-26",
       "securityCode": 2961,
       "concluded": true
+    },
+    {
+      "id": "417a",
+      "address": "teste",
+      "scheduleDate": "2024-12-12",
+      "securityCode": 5501,
+      "concluded": true
+    },
+    {
+      "id": "aada",
+      "address": "testeaaaAAA",
+      "scheduleDate": "2023-12-12",
+      "securityCode": 3454,
+      "concluded": false
     }
   ],
   "ratings": [

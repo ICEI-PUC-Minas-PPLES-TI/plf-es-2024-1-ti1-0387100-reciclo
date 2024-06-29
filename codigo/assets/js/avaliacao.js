@@ -1,63 +1,67 @@
-import { postRating } from "../../service/avaliacao-service.js";
+import { RatingService } from "../../service/avaliacao-service.js";
+import { ResidueService } from "../../service/residuos-service.js";
 
-let apiData = "../../db/demandas.json"
+const ratingService = new RatingService()
+const residueService = new ResidueService();
 
-fetch(apiData)
-    .then(response => response.json())
-    .then(dados => {
-        dados.demanda.forEach(dadosDemanda => {
-            const nomeProdutorDemanda = document.getElementById('titulo-coletador');
-            const tipoResiduo = document.getElementById('tipoResiduo');
-            const descricaoDemanda = document.querySelector('#caixa-descricao p');
-            const enderecoDemanda = document.querySelector('ul > li:first-child');
-            const horarioDemanda = document.querySelector('.horarioData');
-            const imagemDemanda = document.getElementById('imagemDemanda');
+const confirmarAvaliacaoButton = document.getElementById("btnConfirmarAvaliacao");
+confirmarAvaliacaoButton.addEventListener("click", sendRating)
 
-            console.log(imagemDemanda)
+async function sendRating() {
+  const rating = await ratingDTO()
+  await ratingService.postRating(rating);
+  window.location.reload();
+}
 
-            imagemDemanda.src = `${dadosDemanda.image}`
-            nomeProdutorDemanda.innerHTML = `${dadosDemanda.produtor.nome}`;
-            tipoResiduo.innerHTML = `${dadosDemanda.tipoResiduo} - ${dadosDemanda.quantidade}`
-            descricaoDemanda.innerHTML = `${dadosDemanda.descricaoDemanda}`;
-            enderecoDemanda.innerHTML = `${dadosDemanda.enderecoDemanda}`;
-            horarioDemanda.innerHTML = `${dadosDemanda.programacaoColeta}`;
-        });
-    })
-/*-------------------------------------------------*/
-const concluirDemanda = document.querySelector("#btnConcluir");
-const modal = document.querySelector(".divModal");
-const modalInput = document.querySelector(".modal")
-
-concluirDemanda.addEventListener("click", function () {
-    modal.classList.add('open')
-    modalInput.classList.add('open')
-
-    modal.addEventListener('click', (e) => {
-        if (e.target.id == 'divModal') {
-            modal.classList.remove('open')
-        }
-    })
-}, false);
-/*-------------------------------------------------*/
-
-let stars = document.querySelectorAll('.star-icon');
-                  
-document.addEventListener('click', function(e){
-  let classStar = e.target.classList;
-  if(!classStar.contains('ativo')){
-    stars.forEach(function(star){
-      star.classList.remove('ativo');
-    });
-    classStar.add('ativo');
-    let avaliacaFinal = e.target.getAttribute('data-avaliacao')
-    console.log(avaliacaFinal);
+async function ratingDTO(){
+  const rating = {
+    collectorId: getUserId(),
+    producerId: await getProducerId(),
+    rating: ratingFinish()
   }
+
+  return rating;
+}
+
+async function getProducerId(){
+  const residue = await residueService.getResiduo(getResidueId());
+  return residue.producerId;
+}
+
+const stars = document.querySelectorAll('.star-icon');
+
+stars.forEach(function(star){
+  star.addEventListener("click", (e) => handleRating(e.target));
 });
 
-// como criar um rating
-// const rating = {
-//   collectorId: numero,
-//   producerId: numero,
-//   rating: numero
-// }
-// postRating(rating);
+function ratingFinish() {
+  let avaliacaFinal
+
+  stars.forEach(function(star){
+    if (star.classList.contains("ativo")) {
+      avaliacaFinal = star.getAttribute('data-avaliacao')
+    }
+  });
+  
+  return avaliacaFinal;
+}
+
+function handleRating(el){
+  resetClasslistStar() 
+  el.classList.add("ativo")
+}
+
+function resetClasslistStar() {
+  stars.forEach(function(star){
+    star.classList.remove("ativo");
+  });
+}
+
+function getResidueId(){
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get('id');
+}
+
+function getUserId(){
+  return localStorage.getItem("id");
+}

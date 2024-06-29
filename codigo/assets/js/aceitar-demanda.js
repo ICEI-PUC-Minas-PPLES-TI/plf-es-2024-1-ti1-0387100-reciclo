@@ -1,11 +1,13 @@
 import {ResidueService} from '../../service/residuos-service.js';
-import {getTipoResiduo} from '../../service/tiposResiduos-service.js';
+import {ResidueTypeService} from '../../service/tiposResiduos-service.js';
 import {DeliveryService} from '../../service/entrega-service.js';
 import {UserService} from '../../service/usuario-service.js';
 
 const userService = new UserService();
 const residueService = new ResidueService();
 const deliveryService = new DeliveryService();
+const residueTypeService = new ResidueTypeService();
+
 let coletor = null;
 let demanda = null;
 let tipoResiduo = null;
@@ -19,7 +21,7 @@ async function fetchUsuario(id) {
 async function fetchDemanda(id) {
   const response = await residueService.getResiduo(id);
   demanda = await response;
-  tipoResiduo = await getTipoResiduo(demanda.residuesTypesId);
+  tipoResiduo = await residueTypeService.getTipoResiduo(demanda.residuesTypesId);
   delivery = await deliveryService.getDelivery(demanda.deliveryId);
 }
 

@@ -4,7 +4,6 @@ import { ResidueService } from "../../service/residuos-service.js";
 const residueService = new ResidueService();
 const deliveryService = new DeliveryService();
 /*-------------------Abertura do Modal--------------------*/
-
 const concluirDemanda = document.querySelector("#btnConcluir");
 const modal = document.querySelector(".divModal");
 const modalInput = document.querySelector(".modal1")
@@ -89,7 +88,10 @@ async function submit() {
         delivery.concluded = true;
         await deliveryService.putDelivery(delivery)
 
-        window.location.reload();
+        const modalCodigo = document.getElementById("modalInput")
+        modalCodigo.classList.add('d-none')
+        const modalAvaliacao = document.getElementById("modal_rating")
+        modalAvaliacao.classList.remove('d-none')
     }
     if (codigo != confirmCode) {
         colorInput1.classList.add('invalid')

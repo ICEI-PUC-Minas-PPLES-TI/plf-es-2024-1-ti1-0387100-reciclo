@@ -1,58 +1,75 @@
-export const postRating = async (rating) => {
-  const response = await fetch('http://localhost:3000/ratings', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(rating),
-  });
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
-  }
-  const data = await response.json();
-  return data;
-}
+export class RatingService {
 
-export const getRatings = async () => {
-  const response = await fetch('http://localhost:3000/ratings');
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
+  constructor(){
+    this.urlBase = "http://localhost:3000/ratings";
   }
-  const ratings = await response.json();
-  return ratings;
-}
 
-export const getRating = async (id) => {
-  const response = await fetch(`http://localhost:3000/ratings/${id}`);
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
-  }
-  const rating = await response.json();
-  return rating;
-}
+  async postRating(rating){
+    const response = await fetch(this.urlBase, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(rating),
+    });
 
-export const putRating = async (rating) => {
-  const response = await fetch(`http://localhost:3000/ratings/${rating.id}`, {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(rating),
-  });
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
-  }
-  const data = await response.json();
-  return data;
-}
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
 
-export const deleteRating = async (id) => {
-  const response = await fetch(`http://localhost:3000/ratings/${id}`, {
-    method: 'DELETE',
-  });
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
+    const data = await response.json();
+    return data;
   }
-  const data = await response.json();
-  return data;
+
+  async getRatings() {
+    const response = await fetch(this.urlBase);
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const ratings = await response.json();
+    return ratings;
+  }
+
+  async getRating(id){
+    const response = await fetch(`${this.urlBase}/${id}`);
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const rating = await response.json();
+    return rating;
+  }
+
+  async putRating(rating){
+    const response = await fetch(`${this.urlBase}/${rating.id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(rating),
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    return data;
+  }
+
+  async deleteRating(id){
+    const response = await fetch(`${this.urlBase}/${id}`, {
+      method: 'DELETE',
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    return data;
+  }
 }

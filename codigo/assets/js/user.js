@@ -1,10 +1,17 @@
-import {getUsuario, putUsuario} from "../../service/usuario-service.js";
+import {UserService} from "../../service/usuario-service.js";
 
+const userService = new UserService();
 const inputFields = ["name", "email", "password", "cellphone"]
 
 async function setupPageUserProfile() {
-    const userId = getQueryParams();
-    const user = await getUsuario(userId);
+    const userId = getUserId();
+    const user = await userService.getUser(userId);
+
+    const userTypeId = getUserTypeId();
+
+    if (userTypeId === "2") {
+        updateToolBarForTypeUser()
+    }
     
     for (let i = 0; i < inputFields.length; i++) {
         changeInputValue(inputFields[i], user[inputFields[i]]);
@@ -15,11 +22,13 @@ async function setupPageUserProfile() {
     document.getElementById('cancel-button').addEventListener('click', handleCancelFields);
 }
 
-function getQueryParams() {
-    const search = window.location.search;
-    const urlParams = new URLSearchParams(search);
-    return urlParams.get('id');
-} 
+function getUserId(){
+    return localStorage.getItem("id");
+}
+
+function getUserTypeId(){
+    return localStorage.getItem("userTypeId");
+}
 
 function changeInputValue(inputId, newValue) {
     const inputElement = document.getElementById(inputId);
@@ -46,20 +55,31 @@ function handleEditFields() {
 }
 
 async function handleSaveFields() {
-    const userId = getQueryParams();
-    const userData = await getUsuario(userId);
+    const userId = getUserId();
+    const userData = await userService.getUser(userId);
 
     const inputFields = document.querySelectorAll('input');
     inputFields.forEach(function(input) {
         userData[input.id] = input.value;
     });
     
-    await putUsuario(userData);
+    await userService.putUser(userData);
     window.location.reload();
 }
 
 function handleCancelFields(){
     window.location.reload();
+}
+
+function updateToolBarForTypeUser() {
+    const linkElement1 = document.getElementById("link_1");
+    const linkElement2 = document.getElementById("link_2");
+
+    linkElement1.href = './coletador/lista-demandas.html';
+    linkElement2.href = './coletador/minhas-demandas.html';
+
+    linkElement1.textContent = 'Coletas Disponíveis';
+    linkElement2.textContent = 'Minhas Coletas';
 }
 
 window.addEventListener("load", setupPageUserProfile);

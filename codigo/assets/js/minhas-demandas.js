@@ -14,7 +14,7 @@ async function setupPageListDemands() {
     const selectedValue = event.target.value;
     tipoSelecionado = selectedValue;
     console.log('Selected material type:', tipoSelecionado);
-    let residueList = residueListTotal.filter(residuo => !residuo.collectorId);
+    let residueList = residueListTotal.filter(residuo => residuo.collectorId === getUserId());
     const list_demands = document.getElementById('list_demands');
     list_demands.innerHTML = '';
 
@@ -25,7 +25,7 @@ async function setupPageListDemands() {
 }
 
 async function populateDemandas(residueListTotal, tipoSelecionado) {
-  let residueList = residueListTotal.filter(residuo => !residuo.collectorId);
+  let residueList = residueListTotal.filter(residuo => residuo.collectorId === getUserId());
 
   if (tipoSelecionado !== 'Todos') {
     residueList = residueList.filter(demanda => tipoResiduos[demanda.residuesTypesId] === tipoSelecionado);
@@ -57,12 +57,8 @@ function createCardResidueData(residue, deliveryResidue) {
     return cardResidueData;
 }
 
-function isUserCollector(){
-    const userTypeId = localStorage.getItem("userTypeId");
-    if (parseInt(userTypeId) === 2) {
-        return true;
-    }
-    return false;
+function getUserId(){
+  return localStorage.getItem("id");
 }
 
 window.addEventListener("load", setupPageListDemands);

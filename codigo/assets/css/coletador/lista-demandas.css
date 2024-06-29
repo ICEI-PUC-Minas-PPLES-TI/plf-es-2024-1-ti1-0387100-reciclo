@@ -6,15 +6,14 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-
-h1{
-    margin: 16px 0;
+#secundaria{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-
-main{
-    margin: 0 36px;
-
+#secundaria p{
+    color: #B0B0B0;
 }
 
 .lista-demanda{
@@ -40,4 +39,16 @@ main{
     height: 32px;
     border-radius: 4px;
     cursor: pointer;
+}
+
+.card_style{
+    all: unset !important;
+    padding: 10px !important;
+    color: gray !important;
+    font-size: 14px !important;
+}
+
+.title_card{
+    color: black !important;
+    font-weight: bold !important;
 }

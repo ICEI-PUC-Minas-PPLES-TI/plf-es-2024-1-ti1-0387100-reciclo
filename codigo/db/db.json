@@ -6,7 +6,7 @@
       "email": "barriguinha@aluguel.com",
       "cellphone": "31975881150",
       "password": "12345678",
-      "userTypeId": 1
+      "userTypeId": "1"
     },
     {
       "id": "2",
@@ -14,7 +14,36 @@
       "email": "vila@acapulco.com",
       "cellphone": "31975881152",
       "password": "12345678",
-      "userTypeId": 2
+      "userTypeId": "2"
+    },
+    {
+      "id": "2f5f",
+      "email": "jpvdo@yahoo.com",
+      "name": "Joao Pedro Vitor de Oliveira",
+      "password": "123",
+      "userTypeId": "1",
+      "cellphone": "31975881152"
+    },
+    {
+      "id": "3b0e",
+      "email": "jpvdo2@yahoo.com",
+      "name": "Joao Pedro Vitor de Oliveira",
+      "password": "123",
+      "userTypeId": "2"
+    },
+    {
+      "id": "717e",
+      "email": "joao.produtor@teste.com",
+      "name": "joao",
+      "password": "123",
+      "userTypeId": "1"
+    },
+    {
+      "id": "3325",
+      "email": "pedro.coletor@teste.com",
+      "name": "pedro",
+      "password": "123",
+      "userTypeId": "2"
     }
   ],
   "userTypes": [
@@ -30,48 +59,121 @@
   "residues": [
     {
       "id": "1",
-      "collectorId": null,
-      "producerId": 1,
-      "residuesTypesId": 3,
-      "deliveryId": 1,
+      "collectorId": "1",
+      "producerId": "1",
+      "residuesTypesId": "3",
+      "deliveryId": "1",
       "unity": "kg",
-      "quantity": 100
+      "quantity": 100,
+      "description": "Descricao"
     },
     {
-      "id": "1",
-      "collectorId": null,
-      "producerId": 1,
-      "residuesTypesId": 2,
-      "deliveryId": 2,
+      "id": "c0ff",
+      "collectorId": "3b0e",
+      "producerId": "2f5f",
+      "residuesTypesId": "4",
+      "deliveryId": "cbf4",
       "unity": "kg",
-      "quantity": 50
+      "quantity": "100",
+      "description": "Material já separado"
     },
     {
-      "id": "1",
+      "id": "bcc8",
       "collectorId": null,
-      "producerId": 1,
-      "residuesTypesId": 1,
-      "deliveryId": 3,
+      "producerId": "2f5f",
+      "residuesTypesId": "2",
+      "deliveryId": "5acd",
       "unity": "kg",
-      "quantity": 30
+      "quantity": "50",
+      "description": "as"
     },
     {
-      "id": "1",
-      "collectorId": null,
-      "producerId": 1,
-      "residuesTypesId": 1,
-      "deliveryId": 4,
+      "id": "5509",
+      "collectorId": "3325",
+      "producerId": "717e",
+      "residuesTypesId": "4",
+      "deliveryId": "85f5",
       "unity": "kg",
-      "quantity": 3
+      "quantity": "100",
+      "description": "Material separado"
     },
     {
-      "id": "1",
-      "collectorId": null,
-      "producerId": 1,
-      "residuesTypesId": 4,
-      "deliveryId": 1,
+      "id": "42d0",
+      "collectorId": "3325",
+      "producerId": "717e",
+      "residuesTypesId": "1",
+      "deliveryId": "86b3",
       "unity": "kg",
-      "quantity": 100
+      "quantity": "30",
+      "description": "Garrafas de ks"
+    }
+  ],
+  "requests": [
+    {
+      "id": "1",
+      "collectorId": "3b0e",
+      "residue": "c0ff",
+      "accept": false
+    },
+    {
+      "id": "2",
+      "collectorId": "2",
+      "residue": "c0ff",
+      "accept": false
+    },
+    {
+      "id": "d527",
+      "collectorId": "3b0e",
+      "residue": "c0ff",
+      "accept": false
+    },
+    {
+      "id": "cc88",
+      "collectorId": "3b0e",
+      "residue": "c0ff",
+      "accept": true
+    },
+    {
+      "id": "eae2",
+      "collectorId": "3b0e",
+      "residue": "bcc8",
+      "accept": null
+    },
+    {
+      "id": "5632",
+      "collectorId": "3325",
+      "residue": "5509",
+      "accept": true
+    },
+    {
+      "id": "1f5b",
+      "collectorId": "3325",
+      "residue": "42d0",
+      "accept": false
+    },
+    {
+      "id": "618e",
+      "collectorId": "3325",
+      "residue": "42d0",
+      "accept": true
+    },
+    {
+      "id": "c4b3",
+      "collectorId": "3325",
+      "residue": "42d0",
+      "accept": true
+    },
+    {
+      "id": "65b5",
+      "collectorId": "3325",
+      "residue": "42d0",
+      "accept": true
+    },
+    {
+      "id": "2756",
+      "collectorId": "3325",
+      "residue": "42d0",
+      "accept": true
     }
   ],
   "residuesTypes": [
@@ -101,32 +203,32 @@
       "concluded": false
     },
     {
-      "id": "2",
-      "address": "Av. dos Engenheiros, 231 - Castelo, Belo Horizonte",
-      "scheduleDate": "24/07/2024",
-      "securityCode": 9999,
+      "id": "cbf4",
+      "address": "Rua Alagoas, 904, Savassi, Belo Horizonte",
+      "scheduleDate": "2024-06-28",
+      "securityCode": 6677,
+      "concluded": true
+    },
+    {
+      "id": "5acd",
+      "address": "Teste",
+      "scheduleDate": "2024-06-28",
+      "securityCode": 8063,
       "concluded": false
     },
     {
-      "id": "3",
-      "address": "R. Pernambuco, 781 - Savassi, Belo Horizonte",
-      "scheduleDate": "24/07/2024",
-      "securityCode": 9999,
-      "concluded": false
+      "id": "85f5",
+      "address": "Rua Alagoas, 904, Savassi",
+      "scheduleDate": "2024-06-28",
+      "securityCode": 9848,
+      "concluded": true
     },
     {
-      "id": "4",
-      "address": "R. Antônio de Albuquerque, 369 - Savassi, Belo Horizonte - MG",
-      "scheduleDate": "24/07/2024",
-      "securityCode": 9999,
-      "concluded": false
-    },
-    {
-      "id": "5",
-      "address": "Av. Cristóvão Colombo, 470 - Funcionários, Belo Horizonte - MG",
-      "scheduleDate": "24/07/2024",
-      "securityCode": 9999,
-      "concluded": false
+      "id": "86b3",
+      "address": "Rua Sao Paulo, 109, Centro",
+      "scheduleDate": "2024-06-26",
+      "securityCode": 2961,
+      "concluded": true
     }
   ],
   "ratings": [

@@ -1,5 +1,8 @@
-import { getResiduos } from "../../service/residuos-service.js";
+import {ResidueService} from '../../service/residuos-service.js';
 import { tipoResiduos } from "./utils/tipo-residuos.js";
+
+tipoResiduos
+const residueService = new ResidueService();
 
 const selectTypeChart = document.getElementById("typeChart");
 
@@ -7,7 +10,7 @@ let myPieChart = null; // Variável global para armazenar o objeto Chart
 
 // Função assíncrona para obter os resíduos
 const fetchResiduos = async () => {
-        return await getResiduos();
+    return await residueService.getResiduos();
 }
 
 // Função para contar os tipos de resíduos

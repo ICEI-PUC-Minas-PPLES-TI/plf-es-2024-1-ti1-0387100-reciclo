@@ -404,7 +404,7 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <th scope="row">RF-001</th>
+                      <th scope="row" class="text-nowrap">RF-001</th>
                       <td>O sistema deve autenticar o usuário</td>
                       <td>ALTA</td>
                     </tr>
@@ -785,7 +785,7 @@
                   <li><strong>Estrutura de dados: </strong><a href="#jsonResidues">Coletas cadastradas</a></li>
                   <li><strong>Instruções de acesso: </strong>
                     <ul>
-											<li>Acessar no menu da Navbar a tela "Meus resíduos"</li>
+											<li>Acessar no menu de navegação a tela "Meus resíduos"</li>
 											<li>Nesta tela também é possível ver o status daquela demanda ("PENDENTE" ou "CONCLUIDO")</li>
                       <li>Clicar no ícone "i" ao fim da parte direita do card da demanda que deseja visualizar. </li>
                       <li>Abrirá a tela com as suas informações detalhadas.</li>
@@ -817,7 +817,7 @@
                 <h5>Funcionalidade 5 - Solicitar coleta (Coletor)</h5>
                 <p>Enviar solicitação de coleta para uma demanda que está aguardando atendimento.</p>
                 <ul class="list-unstyled">
-                  <li><strong>Estrutura de dados: </strong><a href="#jsonResidues">Coletas cadastradas</a></li>
+                  <li><strong>Estrutura de dados: </strong><a href="#jsonRequest">Envio de solicitações</a></li>
                   <li><strong>Instruções de acesso: </strong>
                     <ul>
 											<li>Abra o site e efetue o login em um perfil que tenha sido cadastrado como "coletor"</li>
@@ -833,7 +833,7 @@
                 <h5>Funcionalidade 6 - Aceitar solicitação de coleta (Produtor)</h5>
                 <p>Aceitar solicitação de coleta enviada por um coletor</p>
                 <ul class="list-unstyled">
-                  <li><strong>Estrutura de dados: </strong><a href="#jsonResidues">Coletas cadastradas</a></li>
+                  <li><strong>Estrutura de dados: </strong><a href="#jsonRequest">Envio de solicitações</a></li>
                   <li><strong>Instruções de acesso: </strong>
                     <ul>
 											<li>Abra o site e efetue o login em um perfil que tenha sido cadastrado como "produtor"</li>
@@ -873,7 +873,66 @@
                     </ul>
                   </li>
                 </ul>
-                <p class="text-center"><img class="img-fluid" src="assets/images/codigoValidacaoDemanda.png"
+                <p class="text-center"><img class="img-fluid" src="assets/images/modalConcluirDemanda.png"
+                    alt="Tela para envio de solicitação de coleta"></p>
+              </section>
+							<section>
+                <h5>Funcionalidade 9 - Visualizar detalhes do perfil</h5>
+                <p>Tela para consultar e editar as informações do perfil do usuário</p>
+                <ul class="list-unstyled">
+                  <li><strong>Estrutura de dados: </strong><a href="#jsonUsers">Usuários</a></li>
+                  <li><strong>Instruções de acesso: </strong>
+                    <ul>
+											<li>Acessar a tela "Minha Conta" no menu de navegação</li>
+                    </ul>
+                  </li>
+                </ul>
+                <p class="text-center"><img class="img-fluid" src="assets/images/detalhesPerfil.png"
+                    alt="Tela para envio de solicitação de coleta"></p>
+              </section>
+							<section>
+                <h5>Funcionalidade 10 - Visualizar histórico de demandas do usuário</h5>
+                <p>Tela com os cards de todas as demandas cadastradas ou atendidas pelo usuário</p>
+                <ul class="list-unstyled">
+                  <li><strong>Estrutura de dados: </strong><a href="#jsonDeliveries">Endereço da demanda</a></li>
+                  <li><strong>Instruções de acesso: </strong>
+                    <ul>
+											<li>Acessar a tela "Minhas coletas" para visualizar todas as demandas concluídas do usuário</li>
+                    </ul>
+                  </li>
+                </ul>
+                <p class="text-center"><img class="img-fluid" src="assets/images/historicoDemandas.png"
+                    alt="Tela para envio de solicitação de coleta"></p>
+              </section>
+							<section>
+                <h5>Funcionalidade 11 - Visualizar gráfico com dados das coletas do usuário (Coletor)</h5>
+                <p>Tela que exibe gráfico informando dados a respeito das coletas realizadas por aquele usuário</p>
+                <ul class="list-unstyled">
+                  <li><strong>Estrutura de dados: </strong><a href="#jsonDeliveries">Endereço da demanda</a></li>
+                  <li><strong>Instruções de acesso: </strong>
+                    <ul>
+											<li>Acessar a tela "Relatório" no menu de navegação</li>
+											<li>Selecionar o tipo de informação que deseja visualizar (tipo de resíduo, por peso ou por demanda)</li>
+                    </ul>
+                  </li>
+                </ul>
+                <p class="text-center"><img class="img-fluid" src="assets/images/modalConcluirDemanda.png"
+                    alt="Tela para envio de solicitação de coleta"></p>
+              </section>
+							<section>
+                <h5>Funcionalidade 12 - Avaliação ao fim da coleta (Coletor)</h5>
+                <p>Modal onde o coletor pode avaliar o produtor da demanda que será concluída</p>
+                <ul class="list-unstyled">
+                  <li><strong>Estrutura de dados: </strong><a href="#jsonDeliveries">Avaliação</a></li>
+                  <li><strong>Instruções de acesso: </strong>
+                    <ul>
+											<li>Digitar o código correto para finalizar a demanda</li>
+											<li>Ao clicar em "Confirmar" aparecerá um novo modal com as estrelas para realizar a avaliação</li>
+											<li>Selecionar a quantidade que deseja avaliar e clicar em "Confirmar" novamente</li>
+										</ul>
+                  </li>
+                </ul>
+                <p class="text-center"><img class="img-fluid" src="assets/images/modalConcluirDemanda.png"
                     alt="Tela para envio de solicitação de coleta"></p>
               </section>
             </section>
@@ -929,13 +988,28 @@
                 <pre>
                 "resdiues": [
                   {
-                    "id": "1",
-                    "collectorId": 2,
-                    "producerId": 1,
-                    "residuesTypesId": 1,
-                    "deliveryId": 3,
-                    "unity": "kg",
-                    "quantity": 30
+			"id": "bcc8",
+			"collectorId": null,
+			"producerId": "2f5f",
+			"residuesTypesId": "2",
+			"deliveryId": "5acd",
+			"unity": "kg",
+			"quantity": "50",
+			"description": "testeteste"
+                  }
+                ]  
+                </pre>
+              </section>
+							<section id="jsonRequest">
+                <h5>Estrutura de Dados - Envio de solicitações</h5>
+                <p>Quando é enviado uma solicitação para realizar a coleta as informações a respeito desta solicitação é armazenada</p>
+                <pre>
+                "requests": [
+                  {
+			"id": "1",
+      			"collectorId": "3b0e",
+      			"residue": "c0ff",
+      			"accept": false
                   }
                 ]  
                 </pre>
@@ -975,6 +1049,20 @@
                     "scheduleDate": "24/07/2024",
                     "securityCode": 9999,
                     "concluded": false
+                  }
+                ]
+                </pre>
+              </section>
+							<section id="jsonRatings">
+                <h5>Estrutura de Dados - Avaliação</h5>
+                <p>Informações a respeito da avaliação registrada pelo coletor ao finalizar a demanda</p>
+                <pre>
+                "ratings":[
+                  {
+                    	"id": "1",
+      			"collectorId": 2,
+      			"producerId": 1,
+      			"rating": 5
                   }
                 ]
                 </pre>

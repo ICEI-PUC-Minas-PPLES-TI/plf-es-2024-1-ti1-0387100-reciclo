@@ -700,7 +700,8 @@
               </div>
               <p>Para o controle do versionamento, durante a primeira sprint do projeto, na etapa de documentação, utilizamos apenas a branch Main. As issues foram distribuídas entre os integrantes, cada um recebendo tarefas relacionadas à função que desempenhava no projeto. No entanto, os commits foram realizados apenas pelos integrantes responsáveis pela documentação, durante a etapa em que o foco era o seu preenchimento.<br>
               Na etapa de desenvolvimento do código da aplicação, será criada uma branch para o desenvolvimento de cada requisito funcional do projeto, a fim de evitar conflitos de código. Cada integrante será responsável por validar e, caso a alteração feita no código esteja funcionando corretamente, realizar o commit da issue que estiver sob sua responsabilidade na branch Main.</p>
-            </section>
+							<img style="width: 100%;" src="assets/images/branches.png" alt="Listagem de branches na execução do projeto">
+						</section>
           </section>
           <hr class="divider">
 
@@ -745,22 +746,135 @@
                 <p>Inclua, para cada funcionalidade, itens como: (1) titulos e descrição da funcionalidade; (2)
                   Estrutura de dados associada; (3) o detalhe sobre as instruções de acesso e uso.</p>
               </div>
-
-              <section>
-                <h5>Funcionalidade 1 - Cadastro de Contatos<span class="exemplo">EXEMPLO</span></h5>
-                <p>Permite a inclusão, leitura, alteração e exclusão de contatos para o sistema</p>
+							<section>
+                <h5>Funcionalidade 1 - Identificação do tipo do perfil do usuário (Produtor ou Coletor)</h5>
+                <p>De acordo com o perfil selecionado na hora de realizar o cadastro, ao acessar o sistema o usuário tem acesso as funcionalidades que correspondam ao seu grupo.</p>
                 <ul class="list-unstyled">
-                  <li><strong>Estrutura de dados: </strong><a href="#ti_ed_contatos">Contatos</a></li>
+                  <li><strong>Estrutura de dados: </strong><a href="#jsonUsers">Usuários</a></li>
                   <li><strong>Instruções de acesso: </strong>
                     <ul>
-                      <li>Abra o site e efetue o login</li>
-                      <li>Acesse o menu principal e escolha a opção Cadastros </li>
-                      <li>Em seguida, escolha a opção Contatos</li>
+                      <li>Acessar a tela para realizar o seu cadastro</li>
+                      <li>Selecionar a opção do tipo de usuário que o perfil se enquadra</li>
+                      <li>Ao acessar o sistema com este usuário você terá acesso as funcionalidades daquele grupo de usuário</li>
                     </ul>
                   </li>
                 </ul>
-                <p class="text-center"><img class="img-fluid" src="assets/images/exemplo-funcionalidade.png"
-                    alt="Tela Cadastro de Contatos"></p>
+                <p class="text-center"><img class="img-fluid" src="assets/images/cadastroNovaDemanda.png"
+                    alt="Tela Cadastro de usuário"></p>
+              </section>
+							<section>
+                <h5>Funcionalidade 2 - Cadastro de uma nova demanda (Produtor)</h5>
+                <p>Permite a inserção de uma nova demanda no sistema</p>
+                <ul class="list-unstyled">
+                  <li><strong>Estrutura de dados: </strong><a href="#jsonResidues">Coletas cadastradas</a></li>
+                  <li><strong>Instruções de acesso: </strong>
+                    <ul>
+                      <li>Abra o site e efetue o login em um perfil que tenha sido cadastrado como "produtor"</li>
+                      <li>Na tela inicial clique no botão + para adicionar um novo cadastrado </li>
+                      <li>Preencha as informações da demanda</li>
+                    </ul>
+                  </li>
+                </ul>
+                <p class="text-center"><img class="img-fluid" src="assets/images/cadastroNovaDemanda.png"
+                    alt="Tela Cadastro de Demanda"></p>
+              </section>
+							<section>
+                <h5>Funcionalidade 3 - Visualizar os detalhes de uma demanda cadastrada (Produtor)</h5>
+                <p>Tela dedicada para a visualização das informações de uma demanda de forma detalhada</p>
+                <ul class="list-unstyled">
+                  <li><strong>Estrutura de dados: </strong><a href="#jsonResidues">Coletas cadastradas</a></li>
+                  <li><strong>Instruções de acesso: </strong>
+                    <ul>
+											<li>Acessar no menu da Navbar a tela "Meus resíduos"</li>
+											<li>Nesta tela também é possível ver o status daquela demanda ("PENDENTE" ou "CONCLUIDO")</li>
+                      <li>Clicar no ícone "i" ao fim da parte direita do card da demanda que deseja visualizar. </li>
+                      <li>Abrirá a tela com as suas informações detalhadas.</li>
+                    </ul>
+                  </li>
+                </ul>
+                <p class="text-center"><img class="img-fluid" src="assets/images/acessoDetalhesDemanda.png"
+                    alt="Tela Cadastro de acesso aos detalhes de uma demanda"></p>
+								<p class="text-center"><img class="img-fluid" src="assets/images/detalhesDemanda.png"
+										alt="Tela Cadastro de acesso aos detalhes de uma demanda"></p>
+              </section>
+							<section>
+                <h5>Funcionalidade 4 - Visualizar demandas disponíves para coleta (Coletor)</h5>
+                <p>Visualização de todas as demandas que ainda não foram atendidas por nenhum coletor.</p>
+                <ul class="list-unstyled">
+                  <li><strong>Estrutura de dados: </strong><a href="#jsonResidues">Coletas cadastradas</a></li>
+                  <li><strong>Instruções de acesso: </strong>
+                    <ul>
+											<li>Abra o site e efetue o login em um perfil que tenha sido cadastrado como "coletor"</li>
+                      <li>Na tela "Coletas Disponíveis" terá todas as demandas disponíveis para atendimento. </li>
+                      <li>Caso o usuário queira, no canto superior esquerdo tem um campo para filtrar as demandas de acordo com o tipo dos resíduos.</li>
+                    </ul>
+                  </li>
+                </ul>
+                <p class="text-center"><img class="img-fluid" src="assets/images/visualizacaoDemandasDispniveis.png"
+                    alt="Tela para visualizar todas as demandas disponíveis para serem atendidas"></p>
+              </section>
+							<section>
+                <h5>Funcionalidade 5 - Solicitar coleta (Coletor)</h5>
+                <p>Enviar solicitação de coleta para uma demanda que está aguardando atendimento.</p>
+                <ul class="list-unstyled">
+                  <li><strong>Estrutura de dados: </strong><a href="#jsonResidues">Coletas cadastradas</a></li>
+                  <li><strong>Instruções de acesso: </strong>
+                    <ul>
+											<li>Abra o site e efetue o login em um perfil que tenha sido cadastrado como "coletor"</li>
+                      <li>Na tela "Coletas Disponíveis" acessar os detalhes de alguma demanda que está disponível para ser atendida </li>
+                      <li>Clicar no botão "Solicitar Coleta" na parte inferior da tela para enviar pedido ao produtor responsável pelo cadastro daquela demanda</li>
+                    </ul>
+                  </li>
+                </ul>
+                <p class="text-center"><img class="img-fluid" src="assets/images/solicitarColeta.png"
+                    alt="Tela para envio de solicitação de coleta"></p>
+              </section>
+							<section>
+                <h5>Funcionalidade 6 - Aceitar solicitação de coleta (Produtor)</h5>
+                <p>Aceitar solicitação de coleta enviada por um coletor</p>
+                <ul class="list-unstyled">
+                  <li><strong>Estrutura de dados: </strong><a href="#jsonResidues">Coletas cadastradas</a></li>
+                  <li><strong>Instruções de acesso: </strong>
+                    <ul>
+											<li>Abra o site e efetue o login em um perfil que tenha sido cadastrado como "produtor"</li>
+                      <li>Na tela "Meus Resíduos" acessar os detalhes da demanda em questão </li>
+                      <li>Na parte inferior da tela terá dois botôes, um verde e um vermelho, para aceitar ou rejeitar a solicitação, respectivamente.</li>
+                    </ul>
+                  </li>
+                </ul>
+                <p class="text-center"><img class="img-fluid" src="assets/images/aceiteProdutor.png"
+                    alt="Tela para envio de solicitação de coleta"></p>
+              </section>
+							<section>
+                <h5>Funcionalidade 7 - Código gerado para informar ao coletor (Produtor)</h5>
+                <p>Visualização do código gerado que será informado ao coletor na hora de concluir a demanda</p>
+                <ul class="list-unstyled">
+                  <li><strong>Estrutura de dados: </strong><a href="#jsonDeliveries">Endereço da demanda</a></li>
+                  <li><strong>Instruções de acesso: </strong>
+                    <ul>
+											<li>Acessar a tela de detalhes da demanda que está em processo de execução</li>
+                      <li>Na parte inferior da tela será possível visualizar o código gerado para aquela demanda</li>
+                    </ul>
+                  </li>
+                </ul>
+                <p class="text-center"><img class="img-fluid" src="assets/images/codigoValidacaoDemanda.png"
+                    alt="Visualização do código da demanda"></p>
+              </section>
+							<section>
+                <h5>Funcionalidade 8 - Inserção do código para concluir a demanda (Coletor)</h5>
+                <p>Modal para preencher com o código gerado para a demanda que será finalizada</p>
+                <ul class="list-unstyled">
+                  <li><strong>Estrutura de dados: </strong><a href="#jsonDeliveries">Endereço da demanda</a></li>
+                  <li><strong>Instruções de acesso: </strong>
+                    <ul>
+											<li>Acessar a tela de detalhes da demanda que está em processo de execução</li>
+                      <li>Na parte inferior da tela clicar no botão "Concluir coleta"</li>
+											<li>Preencher com o código informado pelo produtor e clicar em "Concluir"</li>
+                    </ul>
+                  </li>
+                </ul>
+                <p class="text-center"><img class="img-fluid" src="assets/images/codigoValidacaoDemanda.png"
+                    alt="Tela para envio de solicitação de coleta"></p>
               </section>
             </section>
 
@@ -777,7 +891,7 @@
                 <p>Nomeie a estrutura, coloque uma descrição sucinta e apresente um exemplo em formato JSON.</p>
               </div>
 
-              <section>
+              <section id="jsonUsers">
                 <h5>Estrutura de Dados - Usuários</h5>
                 <p>Registros de usuários para realizar login e para relacionar um usuário ao seu tipo de perfil.</p>
                 <pre>
@@ -794,7 +908,7 @@
                 </pre>
               </section>
               <section>
-                <h5>Estrutura de Dados - Tipos de usuários</h5>
+                <h5 id="jsonUserTypes">Estrutura de Dados - Tipos de usuários</h5>
                 <p>Estrutura para relacionar o tipo de perfil que aquele usuário pertence (Coletor ou produtor de resíduo).</p>
                 <pre>
                   "userTypes": [
@@ -809,7 +923,7 @@
                 ]  
                 </pre>
               </section>
-              <section>
+              <section id="jsonResidues">
                 <h5>Estrutura de Dados - Coletas cadastradas</h5>
                 <p>Informações a respeito de uma coleta cadastrada no sistema, com as informações relacionadas a ela.</p>
                 <pre>
@@ -826,7 +940,7 @@
                 ]  
                 </pre>
               </section>
-              <section>
+              <section id="jsonResiduesTypes">
                 <h5>Estrutura de Dados - Tipos de resíduos</h5>
                 <p>Estrutura para relacionar qual é o tipo de material que será coletado.</p>
                 <pre>
@@ -850,7 +964,7 @@
                   ]
                 </pre>
               </section>
-              <section>
+              <section id="jsonDeliveries">
                 <h5>Estrutura de Dados - Informações do endereço da demanda</h5>
                 <p>Informações a respeito do endereço em que será realizada a coleta.</p>
                 <pre>
@@ -883,25 +997,21 @@
               <section>
                 <h5>Images:</h5>
                 <ul>
-                  <li>Unsplash - <a target="_blank" href="https://unsplash.com/">https://unsplash.com/</a><span
-                      class="exemplo">EXEMPLO</span></li>
+                  
                 </ul>
               </section>
 
               <section>
                 <h5>Fonts:</h5>
                 <ul>
-                  <li>Icons Font Face - <a target="_blank"
-                      href="https://fontawesome.com/">https://fontawesome.com/</a><span class="exemplo">EXEMPLO</span>
-                  </li>
+                  
                 </ul>
               </section>
 
               <section>
                 <h5>Scripts:</h5>
                 <ul>
-                  <li>jQuery - <a target="_blank" href="http://www.jquery.com/">http://www.jquery.com/</a><span
-                      class="exemplo">EXEMPLO</span></li>
+                  <li>Chart.js - <a target="_blank" href="https://www.chartjs.org/">https://www.chartjs.org/</a></li>
                   <li>Bootstrap 5 - <a target="_blank" href="http://getbootstrap.com/">http://getbootstrap.com/</a></li>
                 </ul>
               </section>
@@ -923,47 +1033,36 @@
                 questões sobre a manutenção da aplicação; (4) detalhes sobre a integração da aplicação com outros
                 sistemas; (5) questões sobre a segurança da aplicação.</p>
             </div>
-
-            <span class="exemplo">EXEMPLO</span>
             <div class="row">
               <div class="col-lg-12">
                 <div class="accordion accordion-alterate arrow-right" id="popularTopics">
                   <div class="card">
                     <div class="card-header" id="heading1">
                       <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapse1"
-                          aria-expanded="false" aria-controls="collapse1">What does royalty free mean?</a> </h5>
+                          aria-expanded="false" aria-controls="collapse1">Qual tipo de dispositivo devo utilizar para acessar a aplicação?</a> </h5>
                     </div>
                     <div id="collapse1" class="collapse" aria-labelledby="heading1" data-parent="#popularTopics">
-                      <div class="card-body"> Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-                        printer took a galley of type and scrambled it to make a type specimen book. It has survived not
-                        only five centuries, but also the leap into electronic typesetting, remaining essentially
-                        unchanged. </div>
+                      <div class="card-body">A plataforma foi desenvolvida para ter suporte principalmente a aparelhos 
+												móveis, visando que a maioria dos usuários a utilizariam através do celular, porém a responsividade 
+												permite que ela seja utilizada também em desktops e nootebooks.</div>
                     </div>
                   </div>
                   <div class="card">
                     <div class="card-header" id="heading2">
                       <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapse2"
-                          aria-expanded="false" aria-controls="collapse2">What is a single application?</a> </h5>
+                          aria-expanded="false" aria-controls="collapse2">Quantas demandas um coletor pode atender simultaneamente?</a> </h5>
                     </div>
                     <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#popularTopics">
-                      <div class="card-body"> Iisque Anim pariatur cliche reprehenderit, enim eiusmod high life
-                        accusamus terry richardson ad squid. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf
-                        moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch
-                        et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
-                        proident. Ad vegan excepteur butcher vice lomo. </div>
+                      <div class="card-body"> Visando igualar as oportunidades dentro da plataforma, foi definido que um coletor pode atender apenas uma coleta por vez. É necessário concluir a coleta em andamento antes de iniciar um novo atendimento. </div>
                     </div>
                   </div>
                   <div class="card">
                     <div class="card-header" id="heading3">
                       <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapse3"
-                          aria-expanded="false" aria-controls="collapse3">What are some examples of permitted end
-                          products?</a> </h5>
+                          aria-expanded="false" aria-controls="collapse3">Como defino em qual grupo meu perfil se aplica?</a> </h5>
                     </div>
                     <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#popularTopics">
-                      <div class="card-body"> Iisque persius interesset his et, in quot quidam persequeris vim, ad mea
-                        essent possim iriure. Mutat tacimates id sit. Ridens mediocritatem ius an, eu nec magna
-                        imperdiet. </div>
+                      <div class="card-body"> Na hora de realizar o cadastro na plataforma, terá um campo para que seja selecionado a qual categoria o perfil do usuário se adequa. Com base na categoria escolhida, o usuário terá acesso às funcionalidades específicas para aquele tipo de perfil ao acessar a plataforma. </div>
                     </div>
                   </div>
                 </div>

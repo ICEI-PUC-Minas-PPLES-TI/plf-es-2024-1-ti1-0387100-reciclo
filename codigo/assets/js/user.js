@@ -95,7 +95,7 @@ function viewButtonLogout(){
 
 function handleLogout() {
     localStorage.removeItem("id");
-    window.location.href = "index.html";
+    window.location.href = "../index.html";
 }
 
 window.addEventListener("load", setupPageUserProfile);

@@ -25,9 +25,9 @@ async function handleLogin(event) {
             localStorage.setItem("id", user.id);
             localStorage.setItem("userTypeId", user.userTypeId);
             if (user.userTypeId === "1") {
-                window.location.href = "produtor/meus-residuos.html";
+                window.location.href = "pages/produtor/meus-residuos.html";
                 } else if (user.userTypeId === "2") {
-                window.location.href = "coletador/lista-demandas.html";
+                window.location.href = "pages/coletador/lista-demandas.html";
             }
         } else {
             throw new Error("Usuario ou Senha invalidos");

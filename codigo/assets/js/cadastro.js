@@ -30,7 +30,7 @@ async function handleRegister(event) {
         }
 
         const userCreated = await userService.postUser(userData);
-        if(userCreated) window.location.href = 'index.html';
+        if(userCreated) window.location.href = '../index.html';
 
     } catch (error) {
         alert(error.message)

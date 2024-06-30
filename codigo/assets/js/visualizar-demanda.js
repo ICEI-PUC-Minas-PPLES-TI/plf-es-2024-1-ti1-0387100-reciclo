@@ -37,8 +37,12 @@ async function updateRequests() {
     const elementCardStatus = document.getElementById("card-status");
     const elementPedidoColeta = document.getElementById("pedido-coleta");
     const elementExcludeColect = document.getElementById("exclude_container");
+    const buttonAccept = document.getElementById('button_accept');
+    const buttonReject = document.getElementById('button_reject');
+    const buttonCancel = document.getElementById('button_cancel');
     const requests  = await requestService.getRequestsByResidueId(getResidueId());
     const requestsPending = requests.filter(request => request.accept === null);
+    
     if (requestsPending.length > 0) {
         elementCardStatus.classList.remove("d-none")
         elementPedidoColeta.classList.remove("d-none")
@@ -49,9 +53,9 @@ async function updateRequests() {
         const requestData = createCardRequestData(collector, request)
         createCardRequestComponent(requestData)
 
-        document.getElementById('button_accept').addEventListener('click',()=> handleAcceptCollect(requestData));
-        document.getElementById('button_reject').addEventListener('click',()=> handleRejectCollect(requestData));
-        document.getElementById('button_cancel').addEventListener('click', ()=> handleCancelCollect());
+        buttonAccept.addEventListener('click',()=> handleAcceptCollect(requestData));
+        buttonReject.addEventListener('click',()=> handleRejectCollect(requestData));
+        buttonCancel.addEventListener('click', ()=> handleCancelCollect());
     } else {
         elementCardStatus.classList.add("d-none")
         elementExcludeColect.classList.remove("d-none")
@@ -128,7 +132,7 @@ function createCollectorCodeComponent() {
 
 async function handleRejectCollect(requestData) {
     await requestService.putRequest(requestDTO(requestData, false))
-    await updateRequests();
+    window.location.reload();
 }
 
 async function handleCancelCollect() {
